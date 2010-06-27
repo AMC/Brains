@@ -1,0 +1,31 @@
+<% title "Problems" %>
+
+<p class="crud"><%= link_to "New Problem", new_problem_path %></p>
+
+<% for problem in @problems %>
+<table>
+    <tr>
+      <td rowspan="2" class="userInfo">
+      <%= image_tag problem.user.avatar.url %><br />
+        <%= problem.user.login %>        
+      </td>
+      <td class="title">
+        <%=h problem.title %>
+      </td>
+    </tr>
+    <tr>  
+      <td>
+        <%= problem.desciption %>
+      </td>
+    </tr>
+</table>
+<div class="crud">
+    <%= link_to "Show", problem %>
+    <% if problem.user_id == current_user.id %>
+      <%= link_to "Edit", edit_problem_path(problem) %>
+      <%= link_to "Destroy", problem, :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>
+</div>
+<% end %>
+
+

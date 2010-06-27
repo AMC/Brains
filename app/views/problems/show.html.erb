@@ -1,0 +1,25 @@
+<% title "Problem" %>
+
+<table>             
+    <tr>
+        <td class="userImage" rowspan="3">
+          <%=h @problem.user.login %><br />
+          <%= image_tag @problem.user.avatar.url %>
+        </td>
+        <td><%= @problem.desciption %></td>
+    </tr>
+    <tr>
+        <td><%= @problem.title %></td>
+    </tr>
+    <tr>
+        <td><%= @problem.solution %></td>
+    </tr>
+</table>
+
+<div class="crud">
+  <% if @problem.user_id == current_user.id %>
+      <%= link_to "Edit", edit_problem_path(@problem) %> |
+      <%= link_to "Destroy", @problem, :confirm => 'Are you sure?', :method => :delete %> |
+  <% end %>
+  <%= link_to "View All", problems_path %>
+</div>
