@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery
+  layout 'application'
   helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
@@ -41,5 +42,4 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
-
 end

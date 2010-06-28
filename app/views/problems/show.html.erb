@@ -4,15 +4,15 @@
     <tr>
         <td class="userImage" rowspan="3">
           <%=h @problem.user.login %><br />
-          <%= image_tag @problem.user.avatar.url %>
+          <!--<%= image_tag @problem.user.avatar.url %>-->
         </td>
-        <td><%= @problem.desciption %></td>
+        <td><%= @problem.desciption.html_safe %></td>
     </tr>
     <tr>
         <td><%= @problem.title %></td>
     </tr>
     <tr>
-        <td><%= @problem.solution %></td>
+        <td><%= @problem.solution.html_safe %></td>
     </tr>
 </table>
 

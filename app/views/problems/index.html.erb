@@ -6,7 +6,7 @@
 <table>
     <tr>
       <td rowspan="2" class="userInfo">
-      <%= image_tag problem.user.avatar.url %><br />
+      <!--<%= image_tag problem.user.avatar.url %><br />-->
         <%= problem.user.login %>        
       </td>
       <td class="title">
@@ -15,7 +15,7 @@
     </tr>
     <tr>  
       <td>
-        <%= problem.desciption %>
+        <%= problem.desciption.html_safe %>
       </td>
     </tr>
 </table>
