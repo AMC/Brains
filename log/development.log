@@ -541,3 +541,20 @@ ActionController::RoutingError (No route matches "/avatars/original/missing.png"
   /Users/Will/.rvm/rubies/ruby-1.9.2-preview3/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
 
 Rendered /Users/Will/.rvm/gems/ruby-1.9.2-preview3/gems/actionpack-3.0.0.beta4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-06-28 20:47:17 -0700
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /Users/Will/programming/projects/railsapps/braaainz/Brains/app/controllers/application_controller.rb:6)
+  Processing by ProblemsController#index as HTML
+DEPRECATION WARNING: Using #request_uri is deprecated. Use fullpath instead. (called from store_location at /Users/Will/programming/projects/railsapps/braaainz/Brains/app/controllers/application_controller.rb:38)
+Redirected to http://localhost:3000/user_session/new
+Completed 302 Found in 212ms
+
+
+Started GET "/user_session/new" for 127.0.0.1 at 2010-06-28 20:47:19 -0700
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /Users/Will/programming/projects/railsapps/braaainz/Brains/app/controllers/application_controller.rb:6)
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: f.error_messages was removed from Rails and is now available as a plugin. Please install it with `rails plugin install git://github.com/rails/dynamic_form.git`. (called from block in _render_template_60979721_11216610__752330491 at /Users/Will/programming/projects/railsapps/braaainz/Brains/app/views/user_sessions/new.html.erb:4)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _render_template_60979721_11216610__752330491 at /Users/Will/programming/projects/railsapps/braaainz/Brains/app/views/user_sessions/new.html.erb:3)
+Rendered user_sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 84ms (Views: 18.9ms | ActiveRecord: 0.0ms)
