@@ -1,0 +1,3 @@
+pg:
+  pgsql-include: /Library/PostgreSQL/8.4/include
+  with-pgsql-lib: /Library/PostgreSQL/8.4/lib
