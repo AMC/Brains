@@ -1,31 +1,31 @@
 <% title "Problems" %>
 
 <p class="crud"><%= link_to "New Problem", new_problem_path %></p>
-
+<table width="100%">
 <% for problem in @problems %>
-<table>
-    <tr>
-      <td rowspan="2" class="userInfo">
-      <!--<%= image_tag problem.user.avatar.url %><br />-->
-        <%= problem.user.login %>        
-      </td>
-      <td class="title">
-        <%=h problem.title %>
-      </td>
-    </tr>
-    <tr>  
-      <td>
-        <%= problem.desciption.html_safe %>
-      </td>
-    </tr>
-</table>
-<div class="crud">
-    <%= link_to "Show", problem %>
-    <% if problem.user_id == current_user.id %>
-      <%= link_to "Edit", edit_problem_path(problem) %>
-      <%= link_to "Destroy", problem, :confirm => 'Are you sure?', :method => :delete %>
-    <% end %>
-</div>
+  <tr>
+    <td rowspan="2" class="userInfo">
+      <%= render :partial => 'shared/userInfo', :locals=>{:user=>problem.user} %>
+    </td>
+    <td class="title">
+      <h2><%=h link_to problem.title, problem %></h2>
+    </td>
+  </tr>
+  <tr>  
+    <td valign="top">
+      <%= problem.desciption.html_safe %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="crud">
+      <% if problem.user_id == current_user.id %>
+        <%= link_to "Edit", edit_problem_path(problem) %>
+        <%= link_to "Destroy", problem, :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>
+    </td>
+  </tr>
 <% end %>
-
-
+</table>
+<% content_for :rightContent do %>
+<h2>Categories</h2>
+<% end %>

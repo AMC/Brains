@@ -1,18 +1,24 @@
-<% title "Problem" %>
+<% title @problem.title %>
 
 <table>             
     <tr>
-        <td class="userImage" rowspan="3">
-          <%=h @problem.user.login %><br />
-          <!--<%= image_tag @problem.user.avatar.url %>-->
+        <td class="userInfo" rowspan="4">
+          <%= render :partial => 'shared/userInfo', :locals=>{:user=>@problem.user} %>
         </td>
+        <td><h2><%= @problem.title %></h2></td>
+    </tr>
+    <tr>
         <td><%= @problem.desciption.html_safe %></td>
     </tr>
     <tr>
-        <td><%= @problem.title %></td>
+        <td><%= @problem.solution.html_safe %></td>
     </tr>
     <tr>
-        <td><%= @problem.solution.html_safe %></td>
+      <td>
+        <% for tag in @problem.tags %>
+          <%= tag.name %>
+        <% end %>
+      </td>
     </tr>
 </table>
 

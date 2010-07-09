@@ -57,7 +57,29 @@ describe User do
     @user.errors_on(:password_confirmation).length.should == 0
   end
   
-  it "Should "
-
+  it "Should require Password Confirmation to match Password" do
+    @user.password = "password"
+    @user.password_confirmation = "pssword"
+    @user.errors_on(:password).length.should == 1
+    @user.errors_on(:password).first.should == "doesn't match confirmation"
+    @user.password_confirmation = "password"
+    @user.errors_on(:password).length.should == 0
+  end
+  
+  it "Should have a total time worked" do
+    pending "User Timesheet stuff"
+  end
+  
+  it "Should have a total time worked for one week" do
+    pending "User Timesheet stuff"
+  end
+  
+  it "Should have only one open timesheet at a time" do
+    pending "User Timesheet stuff"
+  end
+  
+  it "Should have multiple timesheets" do
+    pending "User Timesheet stuff"
+  end
   
 end

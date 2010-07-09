@@ -1,4 +1,8 @@
 Brains::Application.routes.draw do |map|
+  resources :tasks
+
+  resources :timesheets
+
   
   root :to=>"problems#index"
   

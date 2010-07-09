@@ -1,38 +1,41 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+  
   <%= include_tiny_mce_if_needed %>
-    <title><%= h(yield(:title) || "Untitled") %></title>
-    <%= stylesheet_link_tag 'application' %>
-    <%= yield(:head) %>
-  </head>
-  <body>
-    <div class="header">
-      <%= image_tag "geek.png" %>
-      <h1>Knowledge Base</h1>
-    </div>
-    <div id="container">
-      <% if current_user %>
-        <ul class="menu">
-          <li><%= link_to "Log Out", logout_path if current_user%></li>
-          <li><%= link_to_unless_current "Problems", problems_path %></li>
-          <li><%= link_to_unless_current "Create User", new_account_path %></li>
-          <li><%= link_to_unless_current "All Users", users_path %></li>
-        </ul>
-      <% end %>
-      
-      <div class="clear"></div>
-    
-      <%- flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <%- end -%>
-      
-      <%- if show_title? -%>
-        <h1><%=h yield(:title) %></h1>
-      <%- end -%>
-      
-      <%= yield %>
-    </div>
-  </body>
+  <title><%= "Braaainz :: " + (yield(:title) || "Untitled") %></title>
+  <%= stylesheet_link_tag 'application' %>
+  <%= yield(:head) %>
+</head>
+<body>
+
+<div id="header">
+	<h1>Braaainz</h1>
+	<h2>"Knowledge Base"</h2>
+  <% if current_user %>
+    <ul class="menu">
+      <li><%= link_to "Log Out", logout_path if current_user %></li>
+      <li><%= link_to_unless_current "Problems", problems_path do "<span class='active'>Problems</span>".html_safe end %></li>
+      <li><%= link_to_unless_current "Create User", new_account_path do "<span class='active'>Create User</span>".html_safe end %></li>
+      <li><%= link_to_unless_current "All Users", users_path do "<span class='active'>Problems</span>".html_safe end%></li>
+    </ul>
+  <% end %>
+	<p id="layoutdims">Hello UserName</p>
+</div>
+<div class="colmask rightmenu">
+	<div class="colleft">
+		<div class="col1">
+			<%= yield %>
+		</div>
+		<div class="col2">
+			<%= yield :rightContent %>
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<p>This page uses the <a href="http://matthewjamestaylor.com/blog/perfect-2-column-right-menu.htm">Perfect 'Right Menu' 2 Column Liquid Layout</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a>. View more <a href="http://matthewjamestaylor.com/blog/-website-layouts">website layouts</a> and <a href="http://matthewjamestaylor.com/blog/-web-design">web design articles</a>.</p>
+</div>
+
+</body>
 </html>
+

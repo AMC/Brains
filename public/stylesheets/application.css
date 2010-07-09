@@ -1,32 +1,194 @@
-#flash_notice, #flash_error {padding: 5px 8px;margin: 10px 0;text-align:center;}
-#flash_notice {background-color: #CFC;border: solid 1px #6C6;}
-#flash_error {background-color: #FCC;border: solid 1px #C66;}
-.fieldWithErrors {display: inline;}
-#errorExplanation {width: 400px;border: 2px solid #CF0000;padding: 0px;padding-bottom: 12px;margin-bottom: 20px;background-color: #f0f0f0;}
-#errorExplanation h2 {text-align: left;font-weight: bold;padding: 5px 5px 5px 15px;font-size: 12px;margin: 0;background-color: #c00;color: #fff;}
-#errorExplanation p {color: #333;margin-bottom: 0;padding: 8px;}
-#errorExplanation ul {margin: 2px 24px;}
-#errorExplanation ul li {font-size: 12px;list-style: disc;}
+body {
+	margin:0;
+	padding:0;
+	border:0;			/* This removes the border around the viewport in old versions of IE */
+	width:100%;
+	background:#A3C3FF;
+	min-width:600px;    	/* Minimum width of layout - remove line if not required */
+					/* The min-width property does not work in old versions of Internet Explorer */
+	font-size:90%;
+	color: #3F3C31;
+}
+@font-face {
+	font-family: 'GoodDogRegular';
+	src: url('GoodDog-webfont.eot');
+	src: local('☺'), url('GoodDog-webfont.woff') format('woff'), url('GoodDog-webfont.ttf') format('truetype'), url('GoodDog-webfont.svg#webfontVFGOXOjp') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+a {
+	color:#369;
+}
+a:hover {
+	text-shadow: 1px 1px 0px #fff;
+}
+h1, h2, h3 {
+	margin:0;
+	padding:0;
+	font-family: GoodDogRegular;
+	color: #5881A7;
+}
+h2{
+	font-size: 2em;
+}
+p {
+	margin:.4em 0 .8em 0;
+	padding:0;
+}
+img {
+	margin:10px 0 5px;
+}
+#ads img {
+	display:block;
+	padding-top:10px;
+}
 
-/* ----------------------------------- Global ----------------------------------- */
-
-body {background-color: #333;font-family: Verdana, Helvetica, Arial;font-size: 14px;}
-a img {border: none;}
-a {color: #0000FF;}
-.clear {clear: both;height: 0;overflow: hidden;}
-textarea, input{background-color:#999;border:2px ridge #000;}
-img{margin:5px 5px 5px 0px;}
-
-/* ----------------------------------- Application ------------------------------ */
-
-.header{border:1px solid black;background-color:#999;width:930px;height:270px;margin:0 auto;text-align:right;padding-right:20px;}
-#container {width: 910px;margin: 0 auto;background-color: #FFF;padding: 20px 20px;border: solid 1px black;}
-.menu{list-style-type:none;float:right;}
-.menu li{float:left; width:100px;}
-.login{width:300px;margin:0 auto;}
-table{border:1px solid black;border-collapse:collapse;width:890px;margin:10px auto;}
-table th, td{border:1px solid black;vertical-align:top;}
-.userInfo{width:100px;height:100px;padding-left:10px;font-weight:bold;background-color:#ccc;}
-.title{padding-left:10px;font-weight:bold;font-size:120%;height:25px;line-height:25px;background-color:#999;}
-
-.crud{text-align:right;border:0px;}
+/* Header styles */
+#header {
+	clear:both;
+	float:left;
+	width:100%;
+	background: #C9DCFF;
+	color: #5881A7;
+	border-bottom:1px solid #85ADFF;
+}
+#header h1{
+	font-size: 4em;
+}
+#header h2{
+	font-size: 2em;
+}
+#header p,
+#header h1,
+#header h2 {
+	padding:0 15px 0 15px;
+	margin:0;
+}
+#header ul {
+	clear:left;
+	float:left;
+	width:100%;
+	list-style:none;
+	margin:10px 0 0 0;
+	padding:0;
+}
+#header ul li {
+	display:inline;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+#header ul li a {
+	display:block;
+	float:left;
+	margin:0 0 0 5px;
+	padding:3px 10px;
+	text-align:center;
+	background:#8DA190;
+	color:#000;
+	text-decoration:none;
+	position:relative;
+	left:15px;
+	line-height:2.6em;
+}
+#header ul li a:hover {
+	background:#3A1F2E;
+	color:#C7142F;
+	text-shadow: none;
+}
+#header ul li span.active {
+	color:#C7142F;
+	background:#85ADFF;
+	font-weight:bold;
+	display:block;
+	float:left;
+	margin:0 0 0 5px;
+	padding:3px 10px;
+	text-align:center;
+	text-decoration:none;
+	position:relative;
+	left:15px;
+	line-height:2.6em
+}
+#header ul li a span {
+	display:block;
+}
+/* 'widths' sub menu */
+#layoutdims {
+	clear:both;
+	background:#A3C3FF;
+	border-top:4px solid #85ADFF;
+	margin:0;
+	padding:6px 15px !important;
+	text-align:right;
+}
+/* column container */
+.colmask {
+	position:relative;	/* This fixes the IE7 overflow hidden bug */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
+}
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+	float:left;
+	width:100%;
+	position:relative;
+}
+.col1,
+.col2,
+.col3 {
+	float:left;
+	position:relative;
+	padding:0 0 1em 0;
+	overflow:hidden;
+}
+/* 2 Column (right menu) settings */
+.rightmenu {
+	background:#D4DBAC;		/* right column background colour */
+}
+.userInfo{
+	vertical-align: top;
+	padding: 10px;
+	text-align: center;
+}
+.userInfo .uname{
+	font-family: GoodDogRegular;
+	font-size: 1.3em;
+}
+h2 a{
+	color: #5881A7;
+}
+.crud{
+	text-align: right;
+}
+.rightmenu .colleft {
+	right:25%;			/* right column width */
+	background:#DEE3BF;		/* left column background colour */
+}
+.rightmenu .col1 {
+	width:71%;			/* left column content width (left column width minus left and right padding) */
+	left:27%;			/* (right column width) plus (left column left padding) */
+}
+.rightmenu .col2 {
+	width:21%;			/* right column content width (right column width minus left and right padding) */
+	left:31%;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+}
+.col2 h2 {
+	text-align: center;
+}
+/* Footer styles */
+#footer {
+	clear:both;
+	float:left;
+	width:100%;
+	border-top:1px solid #000;
+	color: #FFF;
+}
+#footer p {
+	padding:10px;
+	margin:0;
+}
