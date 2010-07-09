@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Start time:</b>
+  <%= @timesheet.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%= @timesheet.end_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_timesheet_path(@timesheet) %> |
+<%= link_to 'Back', timesheets_path %>
