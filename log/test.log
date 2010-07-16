@@ -13315,3 +13315,577 @@ Rendered timesheets/_form.html.erb (11.2ms)
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by TasksController#index as HTML
+Rendered tasks/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 1.0ms)
+  Processing by TasksController#show as HTML
+  Parameters: {"id"=>"37"}
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#new as HTML
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"37"}
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"these"=>"params"}}
+Redirected to http://test.host/tasks/1005
+Completed 302 Found in 2ms
+  Processing by TasksController#create as HTML
+  Parameters: {"task"=>{}}
+Redirected to http://test.host/tasks/1006
+Completed 302 Found in 2ms
+  Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"these"=>"params"}}
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#create as HTML
+  Parameters: {"task"=>{}}
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#update as HTML
+  Parameters: {"task"=>{"these"=>"params"}, "id"=>"37"}
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#update as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/tasks/1010
+Completed 302 Found in 2ms
+  Processing by TasksController#update as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/tasks/1011
+Completed 302 Found in 2ms
+  Processing by TasksController#update as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#update as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#destroy as HTML
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/tasks
+Completed 302 Found in 0ms
+  Processing by TasksController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/tasks
+Completed 302 Found in 1ms
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.089000', NULL, NULL, 'Hello Again', NULL, NULL, 'Hello', 7, NULL, '2010-07-16 03:05:34.089000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "tasks" SET "date_finished" = '2010-07-15', "finished" = 't', "updated_at" = '2010-07-16 03:05:34.425000' WHERE ("tasks"."id" = 1)
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.436000', NULL, NULL, 'Desc...', NULL, NULL, '...', 7, NULL, '2010-07-16 03:05:34.436000', NULL)[0m
+  [1m[35mTimesheet Load (0.0ms)[0m  SELECT "timesheets".* FROM "timesheets" INNER JOIN "task_times" ON "timesheets".id = "task_times".timesheet_id WHERE (("task_times".task_id = 1)) AND (end_time is not null)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('will@Willgretz.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('Will')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '7b4139b4b828371c77045a42a4749bb464149a426b164d53c7ad85c83005b0b240cd7632edefcdce6aada6ecdc2af7e2ad7a2d10487b4952a253cdd2b8f27559') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'tgwP0bM_U8ppQffRbGFC') LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '586b8bb4beaa910ffe97570d904ecdad126017140aa88ab13748de8b606bbf062ef71123ced3c35c0b1a34fe780303e46d2842b452658e28232e74041b103557', '2010-07-16 03:05:34.576000', '0.0.0.0', 'will@Willgretz.com', 0, NULL, NULL, '2010-07-16 03:05:34.576000', 'Will', 1, 'FSnjL-evZZXrXtfheU4Z', '0NcF4yVjwhU959MB1Z4N', '7b4139b4b828371c77045a42a4749bb464149a426b164d53c7ad85c83005b0b240cd7632edefcdce6aada6ecdc2af7e2ad7a2d10487b4952a253cdd2b8f27559', 'tgwP0bM_U8ppQffRbGFC')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.619000', '2010-07-16 03:05:34.601000', '2010-07-16 02:05:34.601000', '2010-07-16 03:05:34.619000', 1)
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:05:34.632000', 1, 1, '2010-07-16 03:05:34.632000')[0m
+  [1m[35mTimesheet Load (0.0ms)[0m  SELECT "timesheets".* FROM "timesheets" INNER JOIN "task_times" ON "timesheets".id = "task_times".timesheet_id WHERE (("task_times".task_id = 1)) AND (end_time is not null)
+  [1m[36mTimesheet Load (0.0ms)[0m  [1mSELECT "timesheets".* FROM "timesheets" INNER JOIN "task_times" ON "timesheets".id = "task_times".timesheet_id WHERE (("task_times".task_id = 1)) AND (end_time is not null)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'e373bc54364a8f7a27424ace9ebd2f41a8d3274abbfd83bd00dc0b444f55a94a2be3aefd63c7051917b4f8ca61ecb509b4cda4df10544dc13562aa52611254a6') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'AyNLPMKRZwcTjdRANBON') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '7b4139b4b828371c77045a42a4749bb464149a426b164d53c7ad85c83005b0b240cd7632edefcdce6aada6ecdc2af7e2ad7a2d10487b4952a253cdd2b8f27559') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '7b4139b4b828371c77045a42a4749bb464149a426b164d53c7ad85c83005b0b240cd7632edefcdce6aada6ecdc2af7e2ad7a2d10487b4952a253cdd2b8f27559') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '19f8885e6bf330af05892520cd6c5801524d6e8da7d7be472a4b025a6bbe0efc656fd54a497c2be7ef321ba0d6bacb07ea3e99cacd30d028101032573dc2896e', '2010-07-16 03:05:34.680000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:05:34.680000', 'JST', 1, 'xi05knZmVZS6FlsAktP8', 'vflx2bk6Qnt5huyCjoAm', 'e373bc54364a8f7a27424ace9ebd2f41a8d3274abbfd83bd00dc0b444f55a94a2be3aefd63c7051917b4f8ca61ecb509b4cda4df10544dc13562aa52611254a6', 'AyNLPMKRZwcTjdRANBON')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.684000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:05:34.684000', NULL)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '07d0cc2a0e9421f2154bc3ffb0dbbacd98d4607d0ad1410ff6a4bc80d4eccd12aa2e7fc8b64def1d7713b1d0e714edfb65e89e20cdf6961fa71fc1cc9d835c97') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'yQmsxkqAbLrPPBQyRI6M') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = 'e373bc54364a8f7a27424ace9ebd2f41a8d3274abbfd83bd00dc0b444f55a94a2be3aefd63c7051917b4f8ca61ecb509b4cda4df10544dc13562aa52611254a6') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = 'e373bc54364a8f7a27424ace9ebd2f41a8d3274abbfd83bd00dc0b444f55a94a2be3aefd63c7051917b4f8ca61ecb509b4cda4df10544dc13562aa52611254a6') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '9b1d9b3e98b0865b3be8578e0ee5758b121b87ad6c41f11fce8dc4dfbeb50d2f6dc0b7f5c9253484c54a4b5091975229e28908dcae3a756b70c753fc30a76b29', '2010-07-16 03:05:34.706000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:05:34.706000', 'JST', 1, '_wreLsbwTRsvvyJ6bv9n', 'ny5AiMjprvkd01LpOvV_', '07d0cc2a0e9421f2154bc3ffb0dbbacd98d4607d0ad1410ff6a4bc80d4eccd12aa2e7fc8b64def1d7713b1d0e714edfb65e89e20cdf6961fa71fc1cc9d835c97', 'yQmsxkqAbLrPPBQyRI6M')
+[paperclip] Saving attachments.
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.710000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:05:34.710000', NULL)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '15158ac2b8546442efc86745eab144dfb4afe7d4e38869c247e6275c7b89a9d3d6b0ad3d25e75d467498fa446c5b5391d3b9dd25b65adb2a4ca82a8adbfc9740') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'J9J0HLFJ7oTVWJD09mk3') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '07d0cc2a0e9421f2154bc3ffb0dbbacd98d4607d0ad1410ff6a4bc80d4eccd12aa2e7fc8b64def1d7713b1d0e714edfb65e89e20cdf6961fa71fc1cc9d835c97') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '07d0cc2a0e9421f2154bc3ffb0dbbacd98d4607d0ad1410ff6a4bc80d4eccd12aa2e7fc8b64def1d7713b1d0e714edfb65e89e20cdf6961fa71fc1cc9d835c97') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '05f925a2a7bb8afa47b22f6c41dbe6decd0c58e471a8c0002417b91b068d1725117f804423de6a3c912b69695b7ef13c358f3b030f3286e63d923f4d6e627dde', '2010-07-16 03:05:34.728000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:05:34.728000', 'JST', 1, '_vP_BvAAAHO5wC4Mu_Ej', 'kn6_Lvk7LlI-iJ_gc3Z9', '15158ac2b8546442efc86745eab144dfb4afe7d4e38869c247e6275c7b89a9d3d6b0ad3d25e75d467498fa446c5b5391d3b9dd25b65adb2a4ca82a8adbfc9740', 'J9J0HLFJ7oTVWJD09mk3')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.732000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:05:34.732000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.737000', '2010-07-16 03:05:34.736000', '2010-07-16 03:05:34.722000', '2010-07-16 03:05:34.737000', 1)
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:05:34.738000', 1, 1, '2010-07-16 03:05:34.738000')[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '4a26ebcfac005616ece99cebf8e75b823f047547c13a0f6b93007520e7065e5b24cc556f93bb6a146ef2a0f6a1d0550106499bd513c168f3051413227ac8dca9') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'KQKOYx0_admPSmzew_4p') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '15158ac2b8546442efc86745eab144dfb4afe7d4e38869c247e6275c7b89a9d3d6b0ad3d25e75d467498fa446c5b5391d3b9dd25b65adb2a4ca82a8adbfc9740') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '15158ac2b8546442efc86745eab144dfb4afe7d4e38869c247e6275c7b89a9d3d6b0ad3d25e75d467498fa446c5b5391d3b9dd25b65adb2a4ca82a8adbfc9740') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '34955d48dec22b312abdcb8e3bd1659a5e2b5167f4283bd57e2ebe78278aeddd505aecd9e4b6c6f2d17b835e2b504c8ecbf6eef2f1410761fd084e9edafa7383', '2010-07-16 03:05:34.755000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:05:34.755000', 'JST', 1, 'rQvolM_kRT2FE5x-wtFz', 'LtcTfFROAj29oG8fkcP4', '4a26ebcfac005616ece99cebf8e75b823f047547c13a0f6b93007520e7065e5b24cc556f93bb6a146ef2a0f6a1d0550106499bd513c168f3051413227ac8dca9', 'KQKOYx0_admPSmzew_4p')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.759000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:05:34.759000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.761000', NULL, '2010-07-16 03:05:34.749000', '2010-07-16 03:05:34.761000', 1)
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks" INNER JOIN "task_times" ON "tasks".id = "task_times".task_id WHERE (("task_times".timesheet_id = 1))[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:05:34.765000', 1, 1, '2010-07-16 03:05:34.765000')
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "timesheets" SET "end_time" = '2010-07-16 03:05:34.766000', "updated_at" = '2010-07-16 03:05:34.766000' WHERE ("timesheets"."id" = 1)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '52307c819993e125a33287cbd8c01f3c102a4360877cd3b6155b23ae0590ecbb9e41830d1193b296812b4810c8ab983bdb7eb28c15ca826690ce11297d7b076e') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'Iw9G9XXLhLIPWhGkc0q1') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '4a26ebcfac005616ece99cebf8e75b823f047547c13a0f6b93007520e7065e5b24cc556f93bb6a146ef2a0f6a1d0550106499bd513c168f3051413227ac8dca9') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '4a26ebcfac005616ece99cebf8e75b823f047547c13a0f6b93007520e7065e5b24cc556f93bb6a146ef2a0f6a1d0550106499bd513c168f3051413227ac8dca9') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, 'd2dbf7511e27219937b984dc1d95586eace7bbcfa944bcdcbf05e1f8f014688abaed9fb0056bec9637dae786f366dfe7c7e2a9df42bb3d35ceddf6666f843f18', '2010-07-16 03:05:34.783000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:05:34.784000', 'JST', 1, 'I-hn0RM3FAEw-l-UxXXj', '4YBCvZxEK82SPcByK_gC', '52307c819993e125a33287cbd8c01f3c102a4360877cd3b6155b23ae0590ecbb9e41830d1193b296812b4810c8ab983bdb7eb28c15ca826690ce11297d7b076e', 'Iw9G9XXLhLIPWhGkc0q1')
+[paperclip] Saving attachments.
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.788000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:05:34.788000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.789000', NULL, '2010-07-16 03:05:34.777000', '2010-07-16 03:05:34.789000', 1)
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:05:34.791000', 1, 1, '2010-07-16 03:05:34.791000')[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks" INNER JOIN "task_times" ON "tasks".id = "task_times".task_id WHERE (("task_times".timesheet_id = 1))
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "timesheets" SET "end_time" = '2010-07-16 03:05:34.794000', "updated_at" = '2010-07-16 03:05:34.794000' WHERE ("timesheets"."id" = 1)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '3695d00226c9aa36f0700b9ed5112854721a7641f7b8a2e331671107bafbea3ff87c98a2f7703b279932fd7065439363b6b9e94b3c02795dc03001792f103b07') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'kPLxZWcQFnDCQsTMlAIN') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '52307c819993e125a33287cbd8c01f3c102a4360877cd3b6155b23ae0590ecbb9e41830d1193b296812b4810c8ab983bdb7eb28c15ca826690ce11297d7b076e') LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '52307c819993e125a33287cbd8c01f3c102a4360877cd3b6155b23ae0590ecbb9e41830d1193b296812b4810c8ab983bdb7eb28c15ca826690ce11297d7b076e') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '939ee40aae79efe9f6407ec1d47d1b681cba4b30a2fc4619210fe85e15aa87c38feffa42b4fb5627ab8e782861216f3d958e1bbce7837ebea3b6a2e8d6e6b532', '2010-07-16 03:05:34.811000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:05:34.812000', 'JST', 1, '_7QKus9F_atDS0u39w99', '6hMY6wBg6XTLE0aP0sTu', '3695d00226c9aa36f0700b9ed5112854721a7641f7b8a2e331671107bafbea3ff87c98a2f7703b279932fd7065439363b6b9e94b3c02795dc03001792f103b07', 'kPLxZWcQFnDCQsTMlAIN')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.815000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:05:34.815000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.817000', NULL, '2010-07-16 03:05:34.805000', '2010-07-16 03:05:34.817000', 1)
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:05:34.819000', 1, 1, '2010-07-16 03:05:34.819000')[0m
+  [1m[35mTask Load (28.0ms)[0m  SELECT "tasks".* FROM "tasks" INNER JOIN "task_times" ON "tasks".id = "task_times".task_id WHERE (("task_times".timesheet_id = 1))
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'a01efe20edd752c0420359fa4a07f6d35fa6490cde66914bd688ba0a7e252ce4d7fc5c2e1186a3456afacd7b5954bbfbcabc140fbdcb9491dab0f48d4b2e4812') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'vc7AkkDbgkQGBS3_HvR_') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '3695d00226c9aa36f0700b9ed5112854721a7641f7b8a2e331671107bafbea3ff87c98a2f7703b279932fd7065439363b6b9e94b3c02795dc03001792f103b07') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '3695d00226c9aa36f0700b9ed5112854721a7641f7b8a2e331671107bafbea3ff87c98a2f7703b279932fd7065439363b6b9e94b3c02795dc03001792f103b07') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '497cb8df36f886bf9761f0391e6f07fa610dd93679cf25d0935b4fa93645df7c7bbd2c8bf45af06833a35c7e6780611a7be6fe7514bed2ccb0277d4fe6969331', '2010-07-16 03:05:34.866000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:05:34.866000', 'JST', 1, 'YR52VwQgCAfL7-CUpT5v', 'n1urBj_Lqeb6539b-NsU', 'a01efe20edd752c0420359fa4a07f6d35fa6490cde66914bd688ba0a7e252ce4d7fc5c2e1186a3456afacd7b5954bbfbcabc140fbdcb9491dab0f48d4b2e4812', 'vc7AkkDbgkQGBS3_HvR_')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.870000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:05:34.870000', NULL)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '914549678bccce03095e0df3fc820d1aa9b2a426cfd331232e5f9499d221947041356deb272572a72d1798f809a7f8bf0f1f646851febf116e06f4f0e7b63836') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '_4_mp-HE4n7bg1MbPDK8') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = 'a01efe20edd752c0420359fa4a07f6d35fa6490cde66914bd688ba0a7e252ce4d7fc5c2e1186a3456afacd7b5954bbfbcabc140fbdcb9491dab0f48d4b2e4812') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = 'a01efe20edd752c0420359fa4a07f6d35fa6490cde66914bd688ba0a7e252ce4d7fc5c2e1186a3456afacd7b5954bbfbcabc140fbdcb9491dab0f48d4b2e4812') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '675f8cd4d8fd350c3a6e12cd430dc95a46ac804544aa72fcef855d4dc7b5e821323d99854d20505d1b2b7404def121b7be133936f62c17d1b70850ee1687939f', '2010-07-16 03:05:34.889000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:05:34.889000', 'JST', 1, 'PE2PjZaX3lCFeqPRm28X', 'zFrYDpO2VTWhcK3obnjg', '914549678bccce03095e0df3fc820d1aa9b2a426cfd331232e5f9499d221947041356deb272572a72d1798f809a7f8bf0f1f646851febf116e06f4f0e7b63836', '_4_mp-HE4n7bg1MbPDK8')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:05:34.893000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:05:34.893000', NULL)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '254040714af6295e8484657f02256a737bab9534a9c0a29e80c520a1d541216afbfcc6980812cb3c36ab921b2006eed56bd08085119d3cef6bff0d6127405139') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'V1c1sl1nGqY9pDWACE7G') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '254040714af6295e8484657f02256a737bab9534a9c0a29e80c520a1d541216afbfcc6980812cb3c36ab921b2006eed56bd08085119d3cef6bff0d6127405139') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'V1c1sl1nGqY9pDWACE7G') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('bob')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '254040714af6295e8484657f02256a737bab9534a9c0a29e80c520a1d541216afbfcc6980812cb3c36ab921b2006eed56bd08085119d3cef6bff0d6127405139') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'V1c1sl1nGqY9pDWACE7G') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('b!b')) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '9c225c38b4f36712401d56e23859c2123cc4fd8fae2947209ac207a6844583e06e4d35cd361c534689fe2efae921e5a9193abf7fc578f9558163d2aee90fa6f0') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'UsR09oHdb2PIsqI9Lq-D') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('b!b')) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '9c225c38b4f36712401d56e23859c2123cc4fd8fae2947209ac207a6844583e06e4d35cd361c534689fe2efae921e5a9193abf7fc578f9558163d2aee90fa6f0') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'UsR09oHdb2PIsqI9Lq-D') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('bb')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '18270f97b89d67040a24e9ee5c2da70b188799c81434804bb7467a685801569409283e1851b50e3c71f97dda61bc9e805f84a31bc95196318575a951a7f9661d') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'C0AV0MZ1n7rCrLgrq88Q') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('bb')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '18270f97b89d67040a24e9ee5c2da70b188799c81434804bb7467a685801569409283e1851b50e3c71f97dda61bc9e805f84a31bc95196318575a951a7f9661d') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'C0AV0MZ1n7rCrLgrq88Q') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '4f3540b91f3daa4d1274ca2dad5d12d7432c9f249cf0bdd51912e5fdd34b3d6592a857011fea7e0cf0f30503cd0a844e18ee844cfabbd165fb0a2a8daf618b7d') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'JmvC6PPAonw9oGfbNFrI') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('test@test.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '4f3540b91f3daa4d1274ca2dad5d12d7432c9f249cf0bdd51912e5fdd34b3d6592a857011fea7e0cf0f30503cd0a844e18ee844cfabbd165fb0a2a8daf618b7d') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'JmvC6PPAonw9oGfbNFrI') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '14224e1a0519beffe8126a87dbac854ebddccbecb961e2a4da12daf3f45d8b0fc520b6d5a6b0054a9ddc918b8e8da8c58c0537e5f4600900fcedca7af46a2069') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 't7eTUwCrlTKeYvpekP_b') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '6cf567d5f416a6f9bd0884da85693a16731ff0965fcb18ea7e6ed2eeef5d0c73c22c4e66d02c7f1cb5590a97b23fc1fd17b78da9cf6c949b244130f375982e85') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 't7eTUwCrlTKeYvpekP_b') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '9225722e81107eeeb49d51cbb6e8175e40f0f4a970d84943b0fb5c753161a51c2bc6d7f6571806f1500e35832e4886fa9dfd569259510425f0fce03f4b3898e8') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'AvFoELePC9GSCGL5vjm0') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '9225722e81107eeeb49d51cbb6e8175e40f0f4a970d84943b0fb5c753161a51c2bc6d7f6571806f1500e35832e4886fa9dfd569259510425f0fce03f4b3898e8') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'AvFoELePC9GSCGL5vjm0') LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '122364a61a7f52664990ef8333cfba2f7c1cbae67a09f636ef819703f33fc5f31eb8180c3497c1727eb5db560b8726cd09ba7899fce2d1c02987e7d62e92528b') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'AvFoELePC9GSCGL5vjm0') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'ab4dcea5b13c931db2fa950ebc40908c1957ffe0116ec275085832f6a2ab6749cf41c3f2e4d7790f209addca626e69252a1353c639908a8ba2ff65d7cd7ee407') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'ozxToK7y-MQZ4mS04x_i') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'ab4dcea5b13c931db2fa950ebc40908c1957ffe0116ec275085832f6a2ab6749cf41c3f2e4d7790f209addca626e69252a1353c639908a8ba2ff65d7cd7ee407') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'ozxToK7y-MQZ4mS04x_i') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '4f6ffeea4f1d36405fa12382238f11155b301f9ac0485aab1b48d002830d0976e133a79e8b7fe24353186e18c9629b291a4da5767c72f18eeeca3ce404daec03') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'lkTGqZOGErvWtU81B8Fx') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '4f6ffeea4f1d36405fa12382238f11155b301f9ac0485aab1b48d002830d0976e133a79e8b7fe24353186e18c9629b291a4da5767c72f18eeeca3ce404daec03') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'lkTGqZOGErvWtU81B8Fx') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '4f6ffeea4f1d36405fa12382238f11155b301f9ac0485aab1b48d002830d0976e133a79e8b7fe24353186e18c9629b291a4da5767c72f18eeeca3ce404daec03') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'lkTGqZOGErvWtU81B8Fx') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '38fc69f97825846f94200b229ac8a77bedb523a16a892d0155dfcec814d55c6a2119561b5f83f5ca8ba094c6ffd2315ea0968092bb597a2439c13899226007f7') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'GKr6E0RJuhvMO5bLU_ti') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '38fc69f97825846f94200b229ac8a77bedb523a16a892d0155dfcec814d55c6a2119561b5f83f5ca8ba094c6ffd2315ea0968092bb597a2439c13899226007f7') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'GKr6E0RJuhvMO5bLU_ti') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '38fc69f97825846f94200b229ac8a77bedb523a16a892d0155dfcec814d55c6a2119561b5f83f5ca8ba094c6ffd2315ea0968092bb597a2439c13899226007f7') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'GKr6E0RJuhvMO5bLU_ti') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by TasksController#index as HTML
+Rendered tasks/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 1.0ms)
+  Processing by TasksController#show as HTML
+  Parameters: {"id"=>"37"}
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#new as HTML
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"37"}
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"these"=>"params"}}
+Redirected to http://test.host/tasks/1005
+Completed 302 Found in 3ms
+  Processing by TasksController#create as HTML
+  Parameters: {"task"=>{}}
+Redirected to http://test.host/tasks/1006
+Completed 302 Found in 2ms
+  Processing by TasksController#create as HTML
+  Parameters: {"task"=>{"these"=>"params"}}
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#create as HTML
+  Parameters: {"task"=>{}}
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#update as HTML
+  Parameters: {"task"=>{"these"=>"params"}, "id"=>"37"}
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#update as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/tasks/1010
+Completed 302 Found in 1ms
+  Processing by TasksController#update as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/tasks/1011
+Completed 302 Found in 1ms
+  Processing by TasksController#update as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#update as HTML
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  Processing by TasksController#destroy as HTML
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/tasks
+Completed 302 Found in 1ms
+  Processing by TasksController#destroy as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/tasks
+Completed 302 Found in 1ms
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.284000', NULL, NULL, 'Hello Again', NULL, NULL, 'Hello', 7, NULL, '2010-07-16 03:09:13.284000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "tasks" SET "date_finished" = '2010-07-15', "finished" = 't', "updated_at" = '2010-07-16 03:09:13.618000' WHERE ("tasks"."id" = 1)
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.629000', NULL, NULL, 'Desc...', NULL, NULL, '...', 7, NULL, '2010-07-16 03:09:13.629000', NULL)[0m
+  [1m[35mTimesheet Load (0.0ms)[0m  SELECT "timesheets".* FROM "timesheets" INNER JOIN "task_times" ON "timesheets".id = "task_times".timesheet_id WHERE (("task_times".task_id = 1)) AND (end_time is not null)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('will@Willgretz.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('Will')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'f8d77a912572b77eeab8ac12083ef51205bae446c504570077140738b48b16a2946a70c6c4135bb4b4b63db569737e9e539b5252ce3d32faf6d700983e1ffd8a') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'C5951hALB23EIahk8a-U') LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '941574f2e15d52c16f9c380b64d7f07aeacdc754bdfd4e651f9f2eca9633dc5a3272d588f54f54ed61d2c07e4a8b1636dffdb74d88409e35b78958d23184dc81', '2010-07-16 03:09:13.746000', '0.0.0.0', 'will@Willgretz.com', 0, NULL, NULL, '2010-07-16 03:09:13.746000', 'Will', 1, 'SdrQpjKJuyyQ4OKbig0g', 'UsNVPDydweyA1GB5NSCD', 'f8d77a912572b77eeab8ac12083ef51205bae446c504570077140738b48b16a2946a70c6c4135bb4b4b63db569737e9e539b5252ce3d32faf6d700983e1ffd8a', 'C5951hALB23EIahk8a-U')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.789000', '2010-07-16 03:09:13.771000', '2010-07-16 02:09:13.771000', '2010-07-16 03:09:13.789000', 1)
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:09:13.803000', 1, 1, '2010-07-16 03:09:13.803000')[0m
+  [1m[35mTimesheet Load (0.0ms)[0m  SELECT "timesheets".* FROM "timesheets" INNER JOIN "task_times" ON "timesheets".id = "task_times".timesheet_id WHERE (("task_times".task_id = 1)) AND (end_time is not null)
+  [1m[36mTimesheet Load (0.0ms)[0m  [1mSELECT "timesheets".* FROM "timesheets" INNER JOIN "task_times" ON "timesheets".id = "task_times".timesheet_id WHERE (("task_times".task_id = 1)) AND (end_time is not null)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '39dfb7ee375c1b5068ae29e6b2e0918494b4043dbb36e873115fb6285c3e6549adfdbb702a41f1d08ebc5179bd9e1a8aef50830d54ef5132843b34643f546a83') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'q9bsmJ8tD1wb5TaLePFw') LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = 'f8d77a912572b77eeab8ac12083ef51205bae446c504570077140738b48b16a2946a70c6c4135bb4b4b63db569737e9e539b5252ce3d32faf6d700983e1ffd8a') LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = 'f8d77a912572b77eeab8ac12083ef51205bae446c504570077140738b48b16a2946a70c6c4135bb4b4b63db569737e9e539b5252ce3d32faf6d700983e1ffd8a') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '00a92c81fe9c93aa4f2ba69213595e5e66e6b50046d7de0093a17c5e3439bad235d25fd6948b7dd38d5d5de2789f166b7acb2ab097aaa5adeab31ebf9804ddca', '2010-07-16 03:09:13.850000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:09:13.850000', 'JST', 1, 'pAawctLqVO0mDnGECsK7', 'FoILsc0J4SleqECaiG12', '39dfb7ee375c1b5068ae29e6b2e0918494b4043dbb36e873115fb6285c3e6549adfdbb702a41f1d08ebc5179bd9e1a8aef50830d54ef5132843b34643f546a83', 'q9bsmJ8tD1wb5TaLePFw')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.854000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:09:13.854000', NULL)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '0ef7fb32c3d144f6424745030f5b0a0e7fd6e27726369e6077ba05b858afc567ee8494b48d2f00d1dc7be0f0ae1de05f8a0d5f4d8f85308079ff5a86ea4eebba') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '4JZE8Qioc93osKTjwcgj') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '39dfb7ee375c1b5068ae29e6b2e0918494b4043dbb36e873115fb6285c3e6549adfdbb702a41f1d08ebc5179bd9e1a8aef50830d54ef5132843b34643f546a83') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '39dfb7ee375c1b5068ae29e6b2e0918494b4043dbb36e873115fb6285c3e6549adfdbb702a41f1d08ebc5179bd9e1a8aef50830d54ef5132843b34643f546a83') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '388f0a5aa70933bdd09348188c48a0d73674a54828f7b272acb430f54cae28700c115e0fca16fba2d78396a4eda3ef0dae4f50b18d784617a39e0b293ecb9281', '2010-07-16 03:09:13.873000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:09:13.873000', 'JST', 1, 'WzqPVIL2-uC9E1btezgL', 'h8AnE6ZeqNcZBEktd5Ux', '0ef7fb32c3d144f6424745030f5b0a0e7fd6e27726369e6077ba05b858afc567ee8494b48d2f00d1dc7be0f0ae1de05f8a0d5f4d8f85308079ff5a86ea4eebba', '4JZE8Qioc93osKTjwcgj')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.877000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:09:13.877000', NULL)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'c6bbd83c18c223a4e8d1653e9783ff0ca5cd745ca3973ebadd1b2eafe804ae803d81c977d7e1ca02de8f65740f116294c816b3e2221473815b5a1e8aa751c7b3') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'khIxPZFcNTJJW5Ur42mg') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '0ef7fb32c3d144f6424745030f5b0a0e7fd6e27726369e6077ba05b858afc567ee8494b48d2f00d1dc7be0f0ae1de05f8a0d5f4d8f85308079ff5a86ea4eebba') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '0ef7fb32c3d144f6424745030f5b0a0e7fd6e27726369e6077ba05b858afc567ee8494b48d2f00d1dc7be0f0ae1de05f8a0d5f4d8f85308079ff5a86ea4eebba') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '307b1822a02992b3757c688598857900152606efe57a251f2a3caf299938e8beb657201dcd55ac8ca7f412a2996820be84adef3895224b0ac35b0439f4f14916', '2010-07-16 03:09:13.894000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:09:13.894000', 'JST', 1, 'Qz3R0QvzKbir42ThxYNy', 'GZVqtYv4L0R989ztZQVi', 'c6bbd83c18c223a4e8d1653e9783ff0ca5cd745ca3973ebadd1b2eafe804ae803d81c977d7e1ca02de8f65740f116294c816b3e2221473815b5a1e8aa751c7b3', 'khIxPZFcNTJJW5Ur42mg')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.898000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:09:13.898000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.903000', '2010-07-16 03:09:13.902000', '2010-07-16 03:09:13.888000', '2010-07-16 03:09:13.903000', 1)
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:09:13.904000', 1, 1, '2010-07-16 03:09:13.904000')[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '6509bf3c89084ecf2e8b153b9152ba2c912d08c4692c2cbc2b08ee963c23941d510ad42677d516e7f1abd7412077757741fa02675f6c09ed0eddd260e5f6c05e') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'mxLmGQigCnOEweuM5Ew6') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = 'c6bbd83c18c223a4e8d1653e9783ff0ca5cd745ca3973ebadd1b2eafe804ae803d81c977d7e1ca02de8f65740f116294c816b3e2221473815b5a1e8aa751c7b3') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = 'c6bbd83c18c223a4e8d1653e9783ff0ca5cd745ca3973ebadd1b2eafe804ae803d81c977d7e1ca02de8f65740f116294c816b3e2221473815b5a1e8aa751c7b3') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, 'b171eb9ddf81a6af213e87352c1bb7955a31d449a494b3392deb7ce2e87b33bbc53235d583b17420756ae28d700a6c85de7520365654552d3235945a7c1bac7c', '2010-07-16 03:09:13.921000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:09:13.921000', 'JST', 1, 'Vr05JdttX5Dif-utJYr0', 'yZVxjv02Kgtn6Fajjv49', '6509bf3c89084ecf2e8b153b9152ba2c912d08c4692c2cbc2b08ee963c23941d510ad42677d516e7f1abd7412077757741fa02675f6c09ed0eddd260e5f6c05e', 'mxLmGQigCnOEweuM5Ew6')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.925000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:09:13.925000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.927000', NULL, '2010-07-16 03:09:13.915000', '2010-07-16 03:09:13.927000', 1)
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks" INNER JOIN "task_times" ON "tasks".id = "task_times".task_id WHERE (("task_times".timesheet_id = 1))[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:09:13.931000', 1, 1, '2010-07-16 03:09:13.931000')
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "timesheets" SET "end_time" = '2010-07-16 03:09:13.932000', "updated_at" = '2010-07-16 03:09:13.932000' WHERE ("timesheets"."id" = 1)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '878be1942ab6627d4195ab609f68697787bb16a139f85030e923980f1d5c0a99fca77ad8a51c31157c2d7176afa2cf3b85377adeacaf938e06c845813dd6c701') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '-NolYKxL1fzR56k0WzWA') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '6509bf3c89084ecf2e8b153b9152ba2c912d08c4692c2cbc2b08ee963c23941d510ad42677d516e7f1abd7412077757741fa02675f6c09ed0eddd260e5f6c05e') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '6509bf3c89084ecf2e8b153b9152ba2c912d08c4692c2cbc2b08ee963c23941d510ad42677d516e7f1abd7412077757741fa02675f6c09ed0eddd260e5f6c05e') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '69890d035e2bfb21331828b798b7c3b1681ad98a76b4e323e083a6f31af74e0dec284867a9ca234b9748c2ef9803545e42794eaeddb153f36d7294d0ff31f12c', '2010-07-16 03:09:13.949000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:09:13.949000', 'JST', 1, 'V8RcCRp_6q0W3FP82fVT', 'tfcw1TCC-Oe2_PZbZFU4', '878be1942ab6627d4195ab609f68697787bb16a139f85030e923980f1d5c0a99fca77ad8a51c31157c2d7176afa2cf3b85377adeacaf938e06c845813dd6c701', '-NolYKxL1fzR56k0WzWA')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.953000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:09:13.953000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.955000', NULL, '2010-07-16 03:09:13.943000', '2010-07-16 03:09:13.955000', 1)
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:09:13.956000', 1, 1, '2010-07-16 03:09:13.956000')[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks" INNER JOIN "task_times" ON "tasks".id = "task_times".task_id WHERE (("task_times".timesheet_id = 1))
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "timesheets" SET "end_time" = '2010-07-16 03:09:13.959000', "updated_at" = '2010-07-16 03:09:13.960000' WHERE ("timesheets"."id" = 1)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '2d0166873e18964c85f9494c0a94eb10d50d59f1123cf4c317befeed333bf09c3c70c273bde3e6b9a83f35d68880eed4cfc01dfd4e10fafad2e76862006d3ee1') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'mpLNXvN3su974MjEd_nA') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '878be1942ab6627d4195ab609f68697787bb16a139f85030e923980f1d5c0a99fca77ad8a51c31157c2d7176afa2cf3b85377adeacaf938e06c845813dd6c701') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '878be1942ab6627d4195ab609f68697787bb16a139f85030e923980f1d5c0a99fca77ad8a51c31157c2d7176afa2cf3b85377adeacaf938e06c845813dd6c701') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '33b1aa0f09c72fea863b6d5748e84f16e6b8e93eef51f2fb6b3abc30b02248e941556d4801c65c1613e32f32efea44e51db80a5db94024802029543df83ded95', '2010-07-16 03:09:13.976000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:09:13.976000', 'JST', 1, 'o7xYU9QqYs_WSjUVSJOm', '60BMICT-vQ_BvK6AZcla', '2d0166873e18964c85f9494c0a94eb10d50d59f1123cf4c317befeed333bf09c3c70c273bde3e6b9a83f35d68880eed4cfc01dfd4e10fafad2e76862006d3ee1', 'mpLNXvN3su974MjEd_nA')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.980000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:09:13.980000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:09:13.981000', NULL, '2010-07-16 03:09:13.970000', '2010-07-16 03:09:13.981000', 1)
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:09:13.983000', 1, 1, '2010-07-16 03:09:13.983000')[0m
+  [1m[35mTask Load (30.0ms)[0m  SELECT "tasks".* FROM "tasks" INNER JOIN "task_times" ON "tasks".id = "task_times".task_id WHERE (("task_times".timesheet_id = 1))
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '0c8e1ab35cc1be787d4648b8a31885969dfa0a45e509da6b93e1ec75b734fdb9e016e12a557d13bfb023c36418372d03a42d7d6639de229fa15f7041c801738e') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'qivS-Y9s3j_JI0vqqPD6') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '2d0166873e18964c85f9494c0a94eb10d50d59f1123cf4c317befeed333bf09c3c70c273bde3e6b9a83f35d68880eed4cfc01dfd4e10fafad2e76862006d3ee1') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '2d0166873e18964c85f9494c0a94eb10d50d59f1123cf4c317befeed333bf09c3c70c273bde3e6b9a83f35d68880eed4cfc01dfd4e10fafad2e76862006d3ee1') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '2b565411b67335dde89cd9dd75779e0b109222f9291a238d962680007bab984c9af3b924f7016dda60a5d427a95b942fb68bba64feebebb095002ed03144de1c', '2010-07-16 03:09:14.031000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:09:14.031000', 'JST', 1, 'VdWnEgfKGMiVDGDt31y_', 'V-uYc8N3g5vgMHDjOM93', '0c8e1ab35cc1be787d4648b8a31885969dfa0a45e509da6b93e1ec75b734fdb9e016e12a557d13bfb023c36418372d03a42d7d6639de229fa15f7041c801738e', 'qivS-Y9s3j_JI0vqqPD6')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:09:14.035000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:09:14.035000', NULL)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'f74aeaeca8ed1984976d228d411edcf19d57be00103aad8b094242e22ea6c0d7b3ad8ff8a2b4a34875f116aeedd28cb937dd7e33c4c22d4cb7fa08fd614fc422') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'Fs_jZY-9Ih1jJ1-YD9CD') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '0c8e1ab35cc1be787d4648b8a31885969dfa0a45e509da6b93e1ec75b734fdb9e016e12a557d13bfb023c36418372d03a42d7d6639de229fa15f7041c801738e') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '0c8e1ab35cc1be787d4648b8a31885969dfa0a45e509da6b93e1ec75b734fdb9e016e12a557d13bfb023c36418372d03a42d7d6639de229fa15f7041c801738e') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '8c74d73562e99cf1aed8dff93e98afa9248b84c22a57d4a4f9a119850cdb542ec5302bb9581261ada7fcd2764960f7ca0d2a7ef278c0cd0e010daa7bf7ee8671', '2010-07-16 03:09:14.055000', '0.0.0.0', 'JST@WillGretz.com', 0, NULL, NULL, '2010-07-16 03:09:14.055000', 'JST', 1, 'x2nxd_ot6PoM_sfmCi9n', '-riwE0neScczN3lmRIHE', 'f74aeaeca8ed1984976d228d411edcf19d57be00103aad8b094242e22ea6c0d7b3ad8ff8a2b4a34875f116aeedd28cb937dd7e33c4c22d4cb7fa08fd614fc422', 'Fs_jZY-9Ih1jJ1-YD9CD')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:09:14.059000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:09:14.059000', NULL)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '72ea5674ee40df3568be21ee20d7c6d858dbef9a68c12c11f2c314cf1d1cff495963506eaae7d41360ef12d84be7f3acf5fdd0825689c632973e40c8d91bb5a3') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'D9KdPmxrAD4KRJMGw1UG') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '72ea5674ee40df3568be21ee20d7c6d858dbef9a68c12c11f2c314cf1d1cff495963506eaae7d41360ef12d84be7f3acf5fdd0825689c632973e40c8d91bb5a3') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'D9KdPmxrAD4KRJMGw1UG') LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('bob')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '72ea5674ee40df3568be21ee20d7c6d858dbef9a68c12c11f2c314cf1d1cff495963506eaae7d41360ef12d84be7f3acf5fdd0825689c632973e40c8d91bb5a3') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'D9KdPmxrAD4KRJMGw1UG') LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('b!b')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '5fcc5272a8d5362f3bd2850486fa0e08ed15bb00b34b19d3ae2a6373eb8a2fa45f3b02f32f98908f1a6084898f124fb57669cd0bd15a467f054b362b364b9a29') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '5L7uXHiaxBu25eFwpxH5') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('b!b')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '5fcc5272a8d5362f3bd2850486fa0e08ed15bb00b34b19d3ae2a6373eb8a2fa45f3b02f32f98908f1a6084898f124fb57669cd0bd15a467f054b362b364b9a29') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '5L7uXHiaxBu25eFwpxH5') LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('bb')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'a5e11096963b60c777845ae60ed494411a9601bbbe4af15afd90dc27db322511648a8df6731c203a4a55776c2dcf8a36b1d51a0654c4333d084ac7f74b69639d') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '_t4zU6kXRFg2NPVTHjAE') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('bb')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'a5e11096963b60c777845ae60ed494411a9601bbbe4af15afd90dc27db322511648a8df6731c203a4a55776c2dcf8a36b1d51a0654c4333d084ac7f74b69639d') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '_t4zU6kXRFg2NPVTHjAE') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '20028e95ef40ba1087f6eabfcd0007401aa07b025343629b4a62a6907a32fa0f9f837c21b29c0ba4f7e8c556ab2ac3b9adbf85e0d4cc225b4d7e010279911f2a') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '0FXNQ4ggJaXnlTK7kcqz') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('test@test.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '20028e95ef40ba1087f6eabfcd0007401aa07b025343629b4a62a6907a32fa0f9f837c21b29c0ba4f7e8c556ab2ac3b9adbf85e0d4cc225b4d7e010279911f2a') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '0FXNQ4ggJaXnlTK7kcqz') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '20c25104b577f3c25d82dccc7901e27a0f29b5b8eda214d452e816d30f15b621478d6ad716b7be3c2e9a2c8d3b18b97f79de4ebe40f8aa0d5f47ffd6c5d4b777') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'olLJv1ss8AWZhwos-8mF') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'de16a25e9e31322ad16bd0110f3195a7c829d0c40a63ede1497dbac48a72b1f28aec5f911d90786b697a1cc8b55e18d940ddc8add33534a01960883f23d696a2') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'olLJv1ss8AWZhwos-8mF') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'ee165f805d5998e403a793c514510ea494927179683e236d07850e6d31fc514a51ff3637d64fc6a4e9c277223f89c4500132da79efd248c5cd03da49cf7ae745') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'j7rxOrOK1eZ3oaD7omJ8') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'ee165f805d5998e403a793c514510ea494927179683e236d07850e6d31fc514a51ff3637d64fc6a4e9c277223f89c4500132da79efd248c5cd03da49cf7ae745') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'j7rxOrOK1eZ3oaD7omJ8') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '58a30557371089d593358effa55b17f78776079c38d54076ccea0d9f8f2a293f85b75fc0840b44dda4bc08fe9d9bd1d4e9ef911f5a07b8d3480877a932bbb195') LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'j7rxOrOK1eZ3oaD7omJ8') LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '17bdba63b75b0e156ed79ac39464d4622f29a1850c2ef984278c5ac71259a0ab36c84aed688bac62798da63c3aaab84d0933a51c62ba24c6eb03711a2f4d6620') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'WkARWrlYKlAvdXQUm0Lz') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '17bdba63b75b0e156ed79ac39464d4622f29a1850c2ef984278c5ac71259a0ab36c84aed688bac62798da63c3aaab84d0933a51c62ba24c6eb03711a2f4d6620') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'WkARWrlYKlAvdXQUm0Lz') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '00a662cbd65e393f8daff39fd951f0c7810246ce2b7146628494c876b0b6299ab7474d968f5cbfb6d4cf821aad94e2f71ed515bead12102ece8b27ad6de1526a') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'CZmBu1tVT9QbfY-QI_u4') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '00a662cbd65e393f8daff39fd951f0c7810246ce2b7146628494c876b0b6299ab7474d968f5cbfb6d4cf821aad94e2f71ed515bead12102ece8b27ad6de1526a') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'CZmBu1tVT9QbfY-QI_u4') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '00a662cbd65e393f8daff39fd951f0c7810246ce2b7146628494c876b0b6299ab7474d968f5cbfb6d4cf821aad94e2f71ed515bead12102ece8b27ad6de1526a') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'CZmBu1tVT9QbfY-QI_u4') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'ca04b952b93dd4707e1d0dbba8a53ae5e31713d8a8304a4501cdfb43f6bceafca3f644690b68f743a8e2f4c0343aa6e673ff2891de28790807f2820700e8656e') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'YR3pI0IEL3O2uEt9pkMa') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'ca04b952b93dd4707e1d0dbba8a53ae5e31713d8a8304a4501cdfb43f6bceafca3f644690b68f743a8e2f4c0343aa6e673ff2891de28790807f2820700e8656e') LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'YR3pI0IEL3O2uEt9pkMa') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'ca04b952b93dd4707e1d0dbba8a53ae5e31713d8a8304a4501cdfb43f6bceafca3f644690b68f743a8e2f4c0343aa6e673ff2891de28790807f2820700e8656e') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'YR3pI0IEL3O2uEt9pkMa') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:13:34.553000', NULL, NULL, 'Hello Again', NULL, NULL, 'Hello', 7, NULL, '2010-07-16 03:13:34.553000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "tasks" SET "date_finished" = '2010-07-15', "finished" = 't', "updated_at" = '2010-07-16 03:13:34.917000' WHERE ("tasks"."id" = 1)
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:13:34.928000', NULL, NULL, 'Desc...', NULL, NULL, '...', 7, NULL, '2010-07-16 03:13:34.928000', NULL)[0m
+  [1m[35mTimesheet Load (0.0ms)[0m  SELECT "timesheets".* FROM "timesheets" INNER JOIN "task_times" ON "timesheets".id = "task_times".timesheet_id WHERE (("task_times".task_id = 1)) AND (end_time is not null)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('will@Willgretz.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('Will')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '21d4b223037ee8409fc3f12c01546175cb1d7f0c51f4380fb5262d8994eb501d7830f8d7885fd0a9370b79b521dc32e579301184c16ed286fe06117de5f3d704') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '4lJW11uQqMq9JgO8HqU-') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '7b5dd5cb8f4757c8c62531fffa33c28573b56a4c37e88abbf882eda2bd5f0948f80dfc25138acd21d48308f80a9cb6b840b4329be5218276f69ca833f1a9bc9c', NULL, NULL, 'will@Willgretz.com', 0, NULL, NULL, NULL, 'Will', 0, '8XYfrJcjmY2bgY2zffWy', 'MnomCiuLMGFEiaSObIIo', '21d4b223037ee8409fc3f12c01546175cb1d7f0c51f4380fb5262d8994eb501d7830f8d7885fd0a9370b79b521dc32e579301184c16ed286fe06117de5f3d704', '4lJW11uQqMq9JgO8HqU-')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.057000', '2010-07-16 03:13:35.021000', '2010-07-16 02:13:35.021000', '2010-07-16 03:13:35.057000', 1)
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:13:35.070000', 1, 1, '2010-07-16 03:13:35.070000')[0m
+  [1m[35mTimesheet Load (0.0ms)[0m  SELECT "timesheets".* FROM "timesheets" INNER JOIN "task_times" ON "timesheets".id = "task_times".timesheet_id WHERE (("task_times".task_id = 1)) AND (end_time is not null)
+  [1m[36mTimesheet Load (0.0ms)[0m  [1mSELECT "timesheets".* FROM "timesheets" INNER JOIN "task_times" ON "timesheets".id = "task_times".timesheet_id WHERE (("task_times".task_id = 1)) AND (end_time is not null)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '7630625c6f751592eb4a3dc79729edb5fb46ecc9ec39cde7e90ec1deef5c87bb9bfa36258c03cbc13bb500cc30e8c20e49e3a6a4a0d4d30368394e983725a30d') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '965NPplbNAJ-D16UI_Xv') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '6600e13ca1cb1815a1541f62a589cb6693deb54c780876b9e8089ec219a5d93b30398f5c9d6a5bef671819d5e20c4693eb56943b48adda2faa285e635ce349be', NULL, NULL, 'JST@WillGretz.com', 0, NULL, NULL, NULL, 'JST', 0, 'T4TrXW0Uefi_yk0dsd2l', '6qE7Txh1kJGxGQ6gQm0i', '7630625c6f751592eb4a3dc79729edb5fb46ecc9ec39cde7e90ec1deef5c87bb9bfa36258c03cbc13bb500cc30e8c20e49e3a6a4a0d4d30368394e983725a30d', '965NPplbNAJ-D16UI_Xv')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.097000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:13:35.097000', NULL)[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'da1463e542c186c56cfc165130fa346cd6295e635c6ed204df839eb433bb10e0fd29eb576821ca9bf7e92a20f28335b81e9ea0559575aadfc586e0b1a98507ba') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'Hi3xmV0XcqjFdoJ4iXuC') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, 'ffde45dd39c1a536417008cf6141572d0f27755b905b42ca4f593981cbb79957d8a0d3fec487fa043efb5f89a7fb1cac9a9c1136839f30b7059085b7d237fa9f', NULL, NULL, 'JST@WillGretz.com', 0, NULL, NULL, NULL, 'JST', 0, '22bIn2nF3rbpl2OiexYj', 'ECMs9GxUFKmJMl4HfM4_', 'da1463e542c186c56cfc165130fa346cd6295e635c6ed204df839eb433bb10e0fd29eb576821ca9bf7e92a20f28335b81e9ea0559575aadfc586e0b1a98507ba', 'Hi3xmV0XcqjFdoJ4iXuC')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.117000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:13:35.117000', NULL)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'c6bf8c031919579479b0360c2c929d7f86befa4d25b94750a6e855698b0f9e9c8cd51145d27e050d9670f6b854971ee6708d37b9513e4084a916a24732765b1e') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'E50gamQEpZK7TV_Rj6OM') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '6dfbbb6273817dd39dd18d5cd47f6838face14bc457826d86492bb98d4e9edd2c7813fb2e0234fa4f50eec020a5556474a7fe95de0e5d59b50e01fcabf2c3cfe', NULL, NULL, 'JST@WillGretz.com', 0, NULL, NULL, NULL, 'JST', 0, 'jc1yhMhBYTi3umfF_R2X', 'ri8XYU7ZspfIi9RIx5Wt', 'c6bf8c031919579479b0360c2c929d7f86befa4d25b94750a6e855698b0f9e9c8cd51145d27e050d9670f6b854971ee6708d37b9513e4084a916a24732765b1e', 'E50gamQEpZK7TV_Rj6OM')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.134000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:13:35.134000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.139000', '2010-07-16 03:13:35.138000', '2010-07-16 03:13:35.127000', '2010-07-16 03:13:35.139000', 1)
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:13:35.140000', 1, 1, '2010-07-16 03:13:35.140000')[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '4379b5c12e4a053b653f363566d1371583a9294952987a86918afc7bdff71b0fcca09975126e910899bbdf731ac5cd1c34b780f7a2b951a5bf9847523866bf55') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'MJo7gEywdNM2IdyvMYBS') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '9b6d37dac0b27340f77013300cb8f48fc476622ff576ecf13128c937051d53bb5b1a0e8e42f9477a8eace7394b87c04af0d3e268d2b065e547e1c2c0c696bdcd', NULL, NULL, 'JST@WillGretz.com', 0, NULL, NULL, NULL, 'JST', 0, 'zvveUqCGmlh8ewdoOyfe', 'OKGURqBh73izoGaN-7QL', '4379b5c12e4a053b653f363566d1371583a9294952987a86918afc7bdff71b0fcca09975126e910899bbdf731ac5cd1c34b780f7a2b951a5bf9847523866bf55', 'MJo7gEywdNM2IdyvMYBS')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.157000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:13:35.157000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.159000', NULL, '2010-07-16 03:13:35.150000', '2010-07-16 03:13:35.159000', 1)
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks" INNER JOIN "task_times" ON "tasks".id = "task_times".task_id WHERE (("task_times".timesheet_id = 1))[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:13:35.163000', 1, 1, '2010-07-16 03:13:35.163000')
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "timesheets" SET "end_time" = '2010-07-16 03:13:35.164000', "updated_at" = '2010-07-16 03:13:35.164000' WHERE ("timesheets"."id" = 1)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'a8bd2c5ffb916f90c3776f3bf9a49c407e143e0269d3b12471185989cecfa9325640cbc9917c6ffdf61b1c6409e0a6256a9a330cef08d2ebfd5d41a080532f66') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'mrfmjzgO_gjjgZrN93gw') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '3b9a45aaf1c8285f8be90e064aed838f7339a893df8cf030b2418a170a364d80722ace049abb5866c4601354790c523f3cca4d597abd5cbddb9fadb782205388', NULL, NULL, 'JST@WillGretz.com', 0, NULL, NULL, NULL, 'JST', 0, 'X8MuUZ3TMOpX3BRjaMZY', '-nf5eNsuO79Ougxs_pra', 'a8bd2c5ffb916f90c3776f3bf9a49c407e143e0269d3b12471185989cecfa9325640cbc9917c6ffdf61b1c6409e0a6256a9a330cef08d2ebfd5d41a080532f66', 'mrfmjzgO_gjjgZrN93gw')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.181000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:13:35.181000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.182000', NULL, '2010-07-16 03:13:35.174000', '2010-07-16 03:13:35.182000', 1)
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:13:35.184000', 1, 1, '2010-07-16 03:13:35.184000')[0m
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks" INNER JOIN "task_times" ON "tasks".id = "task_times".task_id WHERE (("task_times".timesheet_id = 1))
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "timesheets" SET "end_time" = '2010-07-16 03:13:35.187000', "updated_at" = '2010-07-16 03:13:35.187000' WHERE ("timesheets"."id" = 1)[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'e5b849b2491f95e186cf7a3c43578a4e6583d5aa64cfb29ffb10393466cd45c8da36493d1d623ecc898af67bd41daf036dd3b1f70fcc55fd0d4927907ed9a944') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '85UnC5htLcrcd3DxUXE4') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, 'eb8e10ed5779dbd7fba53692dceb92aaa1ee74bf78b7fb9da629b17d7b8da68cce956e2c42025037d11cd144505a35376e443a639a884b3d3bb3f3a4b30ae9f2', NULL, NULL, 'JST@WillGretz.com', 0, NULL, NULL, NULL, 'JST', 0, 'eAEeSUL_etnNwZb3F6J-', 'n3K5i3ijcndnhh2i4t4H', 'e5b849b2491f95e186cf7a3c43578a4e6583d5aa64cfb29ffb10393466cd45c8da36493d1d623ecc898af67bd41daf036dd3b1f70fcc55fd0d4927907ed9a944', '85UnC5htLcrcd3DxUXE4')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.205000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:13:35.205000', NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "timesheets" ("created_at", "end_time", "start_time", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.207000', NULL, '2010-07-16 03:13:35.198000', '2010-07-16 03:13:35.207000', 1)
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "task_times" ("created_at", "task_id", "timesheet_id", "updated_at") VALUES ('2010-07-16 03:13:35.209000', 1, 1, '2010-07-16 03:13:35.209000')[0m
+  [1m[35mTask Load (1.0ms)[0m  SELECT "tasks".* FROM "tasks" INNER JOIN "task_times" ON "tasks".id = "task_times".task_id WHERE (("task_times".timesheet_id = 1))
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'b698b1c5743a8cfd76f3d997e65ca466e4d3523dbff3b811112ae574f3919e01ef306e974877c0398fca4ed33456a2b0b447f278c16a4cd13e22a595f384b62b') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'IjS9azE1GZFmZdVQtjO8') LIMIT 1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, 'c6a1d15bc349eb83584ea2c99ae9320843e0a398c077a2a017a0f83e01ecc76b704943f039d9fbb628ad99edd08ba2b1816096d5674cc5aab0d8b080349e2ce4', NULL, NULL, 'JST@WillGretz.com', 0, NULL, NULL, NULL, 'JST', 0, 'hOkS30ieapMuljIIH2rK', 'KqDHeTAvcp7wDu3x3EPj', 'b698b1c5743a8cfd76f3d997e65ca466e4d3523dbff3b811112ae574f3919e01ef306e974877c0398fca4ed33456a2b0b447f278c16a4cd13e22a595f384b62b', 'IjS9azE1GZFmZdVQtjO8')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.256000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:13:35.256000', NULL)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('JST@WillGretz.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('JST')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '301968c6c535fcff741ce47c3cd268c1a9185dfdfe2393e7b90f6077566d336b97f1644f99377fb2b4b8687160317192b9d2246ce68bc963cea1381760d2ca4d') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'SYmRzY67DoKWdGLIdIb_') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token") VALUES (NULL, NULL, NULL, NULL, '6a3dc91b5dab5c955dee39cd7d0555b14436f84d931810414817498ea0a0025f22649576d0be0d8dfdb4f47cc3a9730412770160a6a72b6dc4434b86973d42f2', NULL, NULL, 'JST@WillGretz.com', 0, NULL, NULL, NULL, 'JST', 0, 'OkD5aE720YOHhysvF376', 'XPcDEY9IveG5QfKrlPXI', '301968c6c535fcff741ce47c3cd268c1a9185dfdfe2393e7b90f6077566d336b97f1644f99377fb2b4b8687160317192b9d2246ce68bc963cea1381760d2ca4d', 'SYmRzY67DoKWdGLIdIb_')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tasks" ("created_at", "critical_path", "date_finished", "description", "due_date", "finished", "name", "priority", "project_id", "updated_at", "user_id") VALUES ('2010-07-16 03:13:35.277000', NULL, NULL, 'Lorem Ipsum Dolor Set Amet', NULL, NULL, 'Test Task 1', 7, NULL, '2010-07-16 03:13:35.277000', NULL)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '799c472ade2aae1a6ed704a9429bfd0b388386a3a440b0f13a45e314b73ec3dd4d289e30b9139294327e090bd835cbccb3ded15dcccd825d383c69770a3188f6') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '5nUMyOMKhyPOnK_hBe9U') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '799c472ade2aae1a6ed704a9429bfd0b388386a3a440b0f13a45e314b73ec3dd4d289e30b9139294327e090bd835cbccb3ded15dcccd825d383c69770a3188f6') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '5nUMyOMKhyPOnK_hBe9U') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('bob')) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '799c472ade2aae1a6ed704a9429bfd0b388386a3a440b0f13a45e314b73ec3dd4d289e30b9139294327e090bd835cbccb3ded15dcccd825d383c69770a3188f6') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = '5nUMyOMKhyPOnK_hBe9U') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('b!b')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '3eb0ba799644abd0fd5d04a086a0a196859c29212b79c4d6d90097301493988cd93bb72e90f9275114412be7a1de926bee5696e9a10cbf7bc54846a503222403') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 't0jAHGtjxqeDm-kIEo5e') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('b!b')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '3eb0ba799644abd0fd5d04a086a0a196859c29212b79c4d6d90097301493988cd93bb72e90f9275114412be7a1de926bee5696e9a10cbf7bc54846a503222403') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 't0jAHGtjxqeDm-kIEo5e') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('bb')) LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '76396a37160a05942f48a4c85bab41361302ba73ed303e234bac43b93d2de0468fdb18b5cfdc20ab4a6835563bd54d7811e1ce58cf47fee4115523cec6dfa0fa') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'LqEJ66lX5RSodwGgIU4e') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('bb')) LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '76396a37160a05942f48a4c85bab41361302ba73ed303e234bac43b93d2de0468fdb18b5cfdc20ab4a6835563bd54d7811e1ce58cf47fee4115523cec6dfa0fa') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'LqEJ66lX5RSodwGgIU4e') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'b46fe390c452f38790c7c6492c94d8d1619d55312dce72aa801167fcb628f3502b62f4eb1f8d17d35f867ac8f1f91c55f1896a022b603940dccc192ab7eb59e3') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'P-I3joGYGP81n-hIXVAr') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('test@test.com')) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'b46fe390c452f38790c7c6492c94d8d1619d55312dce72aa801167fcb628f3502b62f4eb1f8d17d35f867ac8f1f91c55f1896a022b603940dccc192ab7eb59e3') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'P-I3joGYGP81n-hIXVAr') LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '1768e1f0de4a6e171fb98805f0303949f8b36278297c3cf26639958979d80904d8aaa9b85e70020f659dd86d5a894eae348fb5e7572df9dd2525adbc8e59fec3') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'NoyHMOqk2AP13-QWIc6I') LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '2bdebbe9cf8274693b13e5cf4b9a5e0982183111d13713ba86eb8bdf9d4140fd532440b9a37f141f3781e0b665bdfc4056ef52ad1834c15e5e03e9aabecd34f0') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'NoyHMOqk2AP13-QWIc6I') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '7a0b13630a94b9e18e559068e77c357676e111b35a3551dcbeeab178ecf0ed486f652378571640d88721f7989e4c2062bbee82cb8caba5e82bbce73afe8f5dfa') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'UMhAAM07pyYRQcgW4TrF') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '7a0b13630a94b9e18e559068e77c357676e111b35a3551dcbeeab178ecf0ed486f652378571640d88721f7989e4c2062bbee82cb8caba5e82bbce73afe8f5dfa') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'UMhAAM07pyYRQcgW4TrF') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '0ea0e5f4183a8a3f0ea285527ce87603338b7c10feaf543ee2524ffcce1759752a51b8e033796aff2386766e396d98a0de7abdfe64d899291a7654eeaf66fa45') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'UMhAAM07pyYRQcgW4TrF') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'e9b9d55cb1cd99baa017469aab0ca2d3f5864f0d12f350811b187666eb717fe208547f4b3e480aa7baa03f559dfbabff0aac733bd9c427e2395b0d0687aecde7') LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'Itao11zjeXqp7rn6wmJN') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'e9b9d55cb1cd99baa017469aab0ca2d3f5864f0d12f350811b187666eb717fe208547f4b3e480aa7baa03f559dfbabff0aac733bd9c427e2395b0d0687aecde7') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'Itao11zjeXqp7rn6wmJN') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'ba1039f879d18acce14fc435b7523f48ba780e83943274111015224622b36a37f1561d720e4252ef0c38b4da9e10d7adc75ab44e070ab4db1f03cf8db472430a') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'QjybqrFulEEXUFr2FO_6') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'ba1039f879d18acce14fc435b7523f48ba780e83943274111015224622b36a37f1561d720e4252ef0c38b4da9e10d7adc75ab44e070ab4db1f03cf8db472430a') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'QjybqrFulEEXUFr2FO_6') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = 'ba1039f879d18acce14fc435b7523f48ba780e83943274111015224622b36a37f1561d720e4252ef0c38b4da9e10d7adc75ab44e070ab4db1f03cf8db472430a') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'QjybqrFulEEXUFr2FO_6') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '77b8c388fe85061cf9cf3f85fd449fc7f8bf8459b75e1c781e357198ba1aafd8516769dafdb6bc260431618e58066fabfb000a5eb1de58d213e1b5428bab52cd') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'lAzPk2_VL6jiZqHS_Huc') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '77b8c388fe85061cf9cf3f85fd449fc7f8bf8459b75e1c781e357198ba1aafd8516769dafdb6bc260431618e58066fabfb000a5eb1de58d213e1b5428bab52cd') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'lAzPk2_VL6jiZqHS_Huc') LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '77b8c388fe85061cf9cf3f85fd449fc7f8bf8459b75e1c781e357198ba1aafd8516769dafdb6bc260431618e58066fabfb000a5eb1de58d213e1b5428bab52cd') LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'lAzPk2_VL6jiZqHS_Huc') LIMIT 1

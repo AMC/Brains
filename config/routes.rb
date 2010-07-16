@@ -1,4 +1,12 @@
 Brains::Application.routes.draw do |map|
+  resources :projects do
+     collection do
+       get :finished
+     end
+    resources :tasks
+
+  end
+
   resources :tasks
 
   resources :timesheets

@@ -9,13 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100707004812) do
+ActiveRecord::Schema.define(:version => 20100716033149) do
 
   create_table "problems", :force => true do |t|
     t.string   "title"
     t.text     "desciption"
     t.text     "solution"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "expected_finish_date"
+    t.boolean  "finished"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -53,7 +62,6 @@ ActiveRecord::Schema.define(:version => 20100707004812) do
     t.integer  "user_id"
     t.date     "due_date"
     t.date     "date_finished"
-    t.boolean  "critical_path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
