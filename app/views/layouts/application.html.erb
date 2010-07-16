@@ -5,6 +5,10 @@
   <%= include_tiny_mce_if_needed %>
   <title><%= "Braaainz :: " + (yield(:title) || "Untitled") %></title>
   <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"%>
+  <script src="javascript/text">
+    $("a[data-method=delete]").
+  </script>
   <%= yield(:head) %>
 </head>
 <body>

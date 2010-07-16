@@ -10,9 +10,9 @@ class Timesheet < ActiveRecord::Base
   validates :start_time, :future_date=>true
   validates :end_time, :future_date=>true
   
+  after_initialize :set_start_time
   
-  
-  def after_initialize
+  def set_start_time
     self.start_time = Time.now if self.start_time.nil?
   end
   

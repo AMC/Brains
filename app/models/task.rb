@@ -15,7 +15,11 @@ class Task < ActiveRecord::Base
   
   def time_spent
     t = timesheets.where("end_time is not null")
-    t.inject(0) {|total,time| total += time.time_spent}
+    time_spent = 0
+    for sheet in t do
+      time_spent += sheet.time_spent
+    end
+    return time_spent
   end
   
 end

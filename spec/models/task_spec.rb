@@ -50,10 +50,10 @@ describe Task do
     @task.save
     @task.time_spent.should == 0
     @user = User.create(:login=>"Will",:password=>"password", :password_confirmation=>"password", :email=>"will@Willgretz.com")
-    0.upto(4) do |x|
-      puts Timesheet.create(:start_time=>Time.now-(1*x)-1.hour, :tasks=>[@task], :end_time=>Time.now-(1*x).hour, :user=>@user).errors
-      @task.time_spent.should == 60*(1+x)
-    end
+    Timesheet.create(:start_time=>Time.now-1.hour, :tasks=>[@task], :end_time=>Time.now, :user=>@user)
+      @task.time_spent.should == 60
+    Timesheet.create(:start_time=>Time.now-2.hour, :tasks=>[@task], :end_time=>Time.now-3.hour, :user=>@user)
+      @task.time_spent.should == 120
   end
   
 end
