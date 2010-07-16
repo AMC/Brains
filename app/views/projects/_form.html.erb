@@ -1,0 +1,41 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :expected_finish_date %><br />
+    <%= f.text_field :expected_finish_date %>
+  </div>
+  <div class="field">
+    <%= f.label :finished %><br />
+    <%= f.check_box :finished %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<% content_for :head do %>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#project_expected_finish_date").datepicker();
+    })
+    </script>
+<% end %>
