@@ -1,25 +1,16 @@
 <p id="notice"><%= notice %></p>
-
+<h2><%= @project.title %> </h2>
+<p><%= @project.finished ? "Finished" : "Unfinished" %></p>
 <p>
-  <b>Title:</b>
-  <%= @project.title %>
-</p>
-
-<p>
-  <b>Description:</b>
   <%= @project.description %>
 </p>
-
+<% if @project.expected_finish_date %>
 <p>
-  <b>Expected finish date:</b>
+  <b>Expected to be finished by :</b>
   <%= @project.expected_finish_date %>
 </p>
+<% end %>
 
-<p>
-  <b>Finished:</b>
-  <%= @project.finished %>
-</p>
-
-
+<%= link_to "Tasks for this project", project_tasks_path(@project) %> | 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

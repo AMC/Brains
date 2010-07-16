@@ -1,9 +1,10 @@
 class TasksController < ApplicationController
-  # GET /tasks
-  # GET /tasks.xml
-  def index
-    @tasks = Task.all
 
+  before_filter :grab_project
+  before_filter :require_project, :except => :show
+
+  def index
+    @tasks = @project.tasks
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @tasks }
@@ -41,7 +42,7 @@ class TasksController < ApplicationController
   # POST /tasks.xml
   def create
     @task = Task.new(params[:task])
-
+    @task.project = @project
     respond_to do |format|
       if @task.save
         format.html { redirect_to(@task, :notice => 'Task was successfully created.') }
@@ -80,4 +81,16 @@ class TasksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+  
+  def grab_project
+    @project = Project.find(params[:project_id]) if params[:project_id]
+  end
+  
+  def require_project
+    flash[:error]="Must specify a project"
+    redirect_to projects_path if @project.nil?
+  end
+  
 end

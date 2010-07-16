@@ -2,6 +2,8 @@ class Task < ActiveRecord::Base
   
   has_many :task_times
   has_many :timesheets, :through=> :task_times
+  belongs_to :project
+  
   validates_presence_of :name
   validates_presence_of :description
   validates_inclusion_of :priority, :in => 1..10, :message => "%{value} is not an accepted priority"

@@ -1,25 +1,10 @@
-<h1>Listing tasks</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.name %></td>
-    <td><%= task.description %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% for task in @tasks do %>
+  <div>
+    <h2><%= task.name %></h2>
+    <p><%= task.description %></p>
+    <p><strong>Time Spent : <%= pluralize task.time_spent, "min" %></strong>
+  <div>
 <% end %>
-</table>
-
 <br />
 
-<%= link_to 'New Task', new_task_path %>
+<%= link_to 'New Task', new_project_task_path(@project) %>
