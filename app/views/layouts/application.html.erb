@@ -24,7 +24,7 @@
       <li><%= link_to_unless_current "Tasks", projects_path do "<span class ='active'>Tasks</span>".html_safe end %></li>
     </ul>
   <% end %>
-	<p id="layoutdims">Hello <%= current_user.login %></p>
+	<p id="layoutdims"><% if current_user %> Hello <%= current_user.login %> <% end %> </p>
 </div>
 <div class="colmask rightmenu">
 	<div class="colleft">
