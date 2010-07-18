@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
+  
   has_many :problems
+  has_many :comments
   
   has_attached_file :avatar,
                     :url => "avatars/:basename.:extension",

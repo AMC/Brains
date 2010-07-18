@@ -1,27 +1,5 @@
 <% title @problem.title %>
 
-<table>             
-    <tr>
-        <td class="userInfo" rowspan="4">
-          <%= render :partial => 'shared/userInfo', :locals=>{:user=>@problem.user} %>
-        </td>
-        <td><h2><%= @problem.title %></h2></td>
-    </tr>
-    <tr>
-        <td><%= @problem.desciption.html_safe %></td>
-    </tr>
-    <tr>
-        <td><%= @problem.solution.html_safe %></td>
-    </tr>
-    <tr>
-      <td>
-        <% for tag in @problem.tags %>
-          <%= tag.name %>
-        <% end %>
-      </td>
-    </tr>
-</table>
-
 <div class="crud">
   <% if @problem.user_id == current_user.id %>
       <%= link_to "Edit", edit_problem_path(@problem) %> |
@@ -29,3 +7,27 @@
   <% end %>
   <%= link_to "View All", problems_path %>
 </div>
+<table>             
+  <tr>
+    <td class="userInfo" rowspan="4">
+      <%= render :partial => 'shared/userInfo', :locals=>{:user=>@problem.user} %>
+    </td>
+    <td><h2><%= @problem.title %></h2></td>
+  </tr>
+  <tr>
+    <td><%= @problem.desciption.html_safe %></td>
+  </tr>
+  <tr>
+    <td><%= @problem.solution.html_safe %></td>
+  </tr>
+  <tr>
+    <td>
+      <% for tag in @problem.tags %>
+        <span class="tag"><%= tag.name %></span>
+      <% end %>
+    </td>
+  </tr>
+</table>
+<% content_for :head do %><%= javascript_include_tag 'pagination.js' %><% end%>
+<%= render :partial=>"comments/comments" %>
+<%= render :partial=>"comments/form", :locals=>{:object=>@problem}%>

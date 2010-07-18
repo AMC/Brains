@@ -41,11 +41,10 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.xml
   def create
-    @task = Task.new(params[:task])
-    @task.project = @project
+    @task = @project.tasks.build(params[:task])
     respond_to do |format|
       if @task.save
-        format.html { redirect_to(@task, :notice => 'Task was successfully created.') }
+        format.html { redirect_to([@project,@task], :notice => 'Task was successfully created.') }
         format.xml  { render :xml => @task, :status => :created, :location => @task }
       else
         format.html { render :action => "new" }

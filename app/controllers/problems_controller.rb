@@ -19,6 +19,7 @@ class ProblemsController < ApplicationController
   
   def show
     @problem = Problem.find(params[:id])
+    @comments = @problem.comments.paginate(:per_page=>5,:page=>params[:page])
   end
   
   def new
@@ -55,10 +56,10 @@ class ProblemsController < ApplicationController
   end
   
   private 
-    def owns_problem
-      @problem = Problem.find(params[:id]) 
-      return current_user.id == @problem.user_id 
-    end
   
+  def owns_problem
+    @problem = Problem.find(params[:id]) 
+    return current_user.id == @problem.user_id 
+  end
   
 end

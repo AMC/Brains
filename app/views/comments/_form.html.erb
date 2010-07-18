@@ -1,0 +1,5 @@
+<% form_for [object,Comment.new] do |f| -%>
+  <%= f.label :content, "Leave a Comment" %><br />
+  <%= f.text_area :content, :rows=>5, :class=>"w100" %>
+  <%= f.submit "Submit" %>
+<% end -%>

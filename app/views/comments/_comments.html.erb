@@ -1,0 +1,15 @@
+<div id="comment_pagination">
+<% if !@comments.blank? %>
+<table>
+  <% for comment in @comments %>
+  <tr>
+    <td class="userInfo"><%= comment.user.login %></td>
+    <td><%= comment.content %></td>
+  </tr>
+  <% end %>
+</table>
+<%= will_paginate @comments %>
+<% else %>
+  <tr><td colspan="2">No Comments for this problem</td></tr>
+<% end %>
+</div>

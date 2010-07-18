@@ -4,7 +4,10 @@ Brains::Application.routes.draw do |map|
        get :finished
      end
     resources :tasks
-
+  end
+  
+  resources :problems do
+    resources :comments
   end
 
   resources :tasks
@@ -16,7 +19,6 @@ Brains::Application.routes.draw do |map|
   
   resources :users
   resource :account, :controller => "users"
-  resources :problems  
   resource :user_session
   match "logout", :to => "user_sessions#destroy", :as=>"logout"
   

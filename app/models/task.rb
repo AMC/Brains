@@ -2,6 +2,8 @@ class Task < ActiveRecord::Base
   
   has_many :task_times
   has_many :timesheets, :through=> :task_times
+  has_many :comments, :as=> :commentable
+  
   belongs_to :project
   
   validates_presence_of :name
