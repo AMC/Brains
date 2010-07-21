@@ -1,5 +1,7 @@
 <% title "Problems" %>
-
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key %>
+<% end %>
 <p class="crud"><%= link_to "New Problem", new_problem_path %></p>
 <table width="100%">
 <% for problem in @problems %>
@@ -27,5 +29,5 @@
 <% end %>
 </table>
 <% content_for :rightContent do %>
-<h2>Categories</h2>
+<!--<h2>Categories</h2>-->
 <% end %>

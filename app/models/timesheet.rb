@@ -4,6 +4,7 @@ class Timesheet < ActiveRecord::Base
   has_many :tasks, :through=>:task_times
   
   validates_with StartBeforeEndValidator
+  validates_with OnlyOneTimesheetValidator, :on => :create
   
   validates :user_id, :presence=>true
   validates :tasks, :length=>{:minimum=>1, :unless=>:open?}

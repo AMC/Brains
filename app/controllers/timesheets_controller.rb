@@ -80,4 +80,27 @@ class TimesheetsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def start
+   @timesheet = current_user.timesheets.build
+    if @timesheet.save then
+      flash[:notice] = "Time starts now!"
+    else
+      flash[:error] = "You already have a timesheet"
+    end
+    redirect_to root_url
+  end
+
+  def stop
+    if current_user.has_open_timesheet?
+      @projects = Project.unfinished.map{|x|
+       [x.title, x.id]
+      }
+      @timesheet = current_user.timesheets.where(:end_time=>nil).first
+    else
+      flash[:error] = "You do not have a current timesheet"
+      redirect_to timesheets_path
+    end
+  end
+
 end

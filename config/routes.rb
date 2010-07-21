@@ -12,7 +12,13 @@ Brains::Application.routes.draw do |map|
 
   resources :tasks
 
-  resources :timesheets
+  resources :timesheets do
+      collection do
+        get :start
+        get :stop
+        post :stop_handler
+      end
+  end
 
   
   root :to=>"problems#index"
