@@ -3,11 +3,11 @@ body {
 	padding:0;
 	border:0;			/* This removes the border around the viewport in old versions of IE */
 	width:100%;
-	background:#A3C3FF;
+	background:#A1C1FF;
 	min-width:600px;    	/* Minimum width of layout - remove line if not required */
 					/* The min-width property does not work in old versions of Internet Explorer */
 	font-size:90%;
-	color: #3F3C31;
+	color: #1F1C11;
 }
 @font-face {
 	font-family: 'GoodDogRegular';
@@ -17,12 +17,12 @@ body {
 	font-style: normal;
 }
 a {
-	color:#369;
+	color:#169;
 }
 a:hover {
 	text-shadow: 1px 1px 0px #fff;
 }
-h1, h2, h3 {
+h1, h2, h1 {
 	margin:0;
 	padding:0;
 	font-family: GoodDogRegular;
@@ -82,7 +82,7 @@ img {
 	display:block;
 	float:left;
 	margin:0 0 0 5px;
-	padding:3px 10px;
+	padding: 1px 5px;
 	text-align:center;
 	background:#8DA190;
 	color:#000;
@@ -92,18 +92,18 @@ img {
 	line-height:2.6em;
 }
 #header ul li a:hover {
-	background:#3A1F2E;
+	background:#1A1F2E;
 	color:#C7142F;
 	text-shadow: none;
 }
-#header ul li span.active {
+#header ul li span {
 	color:#C7142F;
 	background:#85ADFF;
 	font-weight:bold;
 	display:block;
 	float:left;
 	margin:0 0 0 5px;
-	padding:3px 10px;
+	padding:1px 10px;
 	text-align:center;
 	text-decoration:none;
 	position:relative;
@@ -116,7 +116,7 @@ img {
 /* 'widths' sub menu */
 #layoutdims {
 	clear:both;
-	background:#A3C3FF;
+	background:#A1C1FF;
 	border-top:4px solid #85ADFF;
 	margin:0;
 	padding:6px 15px !important;
@@ -140,7 +140,7 @@ img {
 }
 .col1,
 .col2,
-.col3 {
+.col1 {
 	float:left;
 	position:relative;
 	padding:0 0 1em 0;
@@ -157,7 +157,7 @@ img {
 }
 .userInfo .uname{
 	font-family: GoodDogRegular;
-	font-size: 1.3em;
+	font-size: 1.1em;
 }
 h2 a{
 	color: #5881A7;
@@ -167,7 +167,7 @@ h2 a{
 }
 .rightmenu .colleft {
 	right:25%;			/* right column width */
-	background:#DEE3BF;		/* left column background colour */
+	background:#DEE1BF;		/* left column background colour */
 }
 .rightmenu .col1 {
 	width:71%;			/* left column content width (left column width minus left and right padding) */
@@ -175,7 +175,7 @@ h2 a{
 }
 .rightmenu .col2 {
 	width:21%;			/* right column content width (right column width minus left and right padding) */
-	left:31%;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+	left:11%;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
 }
 .col2 h2 {
 	text-align: center;
@@ -202,4 +202,25 @@ h2 a{
 	background: #fff;
 	display: inline-block;
 	padding: 2px;
+}
+.button{
+	padding: 10px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	color: #000;
+	display: inline-block;
+	background: #0F0;
+	text-decoration:none;
+	font-family: goodDogRegular;
+	font-size: 1.2em;
+	-webkit-box-shadow: 1px 1px 1px #000;
+	-moz-box-shadow: 1px 1px 1px #000;
+	box-shadow: 1px 1px 1px #000;
+}
+.button:hover{
+	text-shadow: none;
+	-webkit-box-shadow: -1px -1px 1px #FFF;
+	-moz-box-shadow: -1px -1px 1px #FFF;
+	box-shadow: -1px -1px 1px #FFF;
 }

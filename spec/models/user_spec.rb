@@ -74,10 +74,6 @@ describe User do
     pending "User Timesheet stuff"
   end
   
-  it "Should have only one open timesheet at a time" do
-    pending "User Timesheet stuff"
-  end
-  
   it "Should have multiple timesheets" do
     pending "User Timesheet stuff"
   end

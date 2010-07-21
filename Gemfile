@@ -17,12 +17,12 @@ gem "rspec-expectations", ">=2.0.0.beta.10", :git => "git://github.com/rspec/rsp
 gem "rspec-mocks",        ">=2.0.0.beta.10", :git => "git://github.com/rspec/rspec-mocks.git"
 gem "will_paginate", :git => "http://github.com/mislav/will_paginate.git", :branch => "rails3"
 
-# group :cucumber do
+
 gem 'capybara'
 gem 'database_cleaner'
 gem 'cucumber-rails'
 gem 'cucumber'
 gem 'spork'
 gem 'launchy'    # So you can do Then show me the page
-# end
+
 

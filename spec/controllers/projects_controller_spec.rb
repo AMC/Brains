@@ -9,7 +9,7 @@ describe ProjectsController do
 
   describe "GET index" do
     it "assigns all projects as @projects" do
-      Project.stub(:all) { [mock_project] }
+      Project.stub(:where) { [mock_project] }
       get :index
       assigns(:projects).should eq([mock_project])
     end

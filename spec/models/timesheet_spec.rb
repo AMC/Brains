@@ -75,4 +75,14 @@ describe Timesheet do
     @timesheet.time_spent.should == 30
   end
   
+  it "Should have only one open timesheet for a given user" do
+    @timesheet.user = @user
+    @timesheet.tasks << @task
+    @timesheet.save
+    @timesheet2 = Timesheet.new
+    @timesheet2.tasks << @task
+    @timesheet2.user = @user
+    @timesheet2.valid?.should == false
+  end
+  
 end

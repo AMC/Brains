@@ -1,25 +1,4 @@
-<h1>Listing timesheets</h1>
-
-<table>
-  <tr>
-    <th>Start time</th>
-    <th>End time</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @timesheets.each do |timesheet| %>
-  <tr>
-    <td><%= timesheet.start_time %></td>
-    <td><%= timesheet.end_time %></td>
-    <td><%= link_to 'Show', timesheet %></td>
-    <td><%= link_to 'Edit', edit_timesheet_path(timesheet) %></td>
-    <td><%= link_to 'Destroy', timesheet, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Timesheet', new_timesheet_path %>
+<h1>Time Spent</h1>
+<a href="/Timesheets/Start" class="button">
+  Start Time
+</a>

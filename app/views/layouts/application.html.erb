@@ -18,10 +18,11 @@
   <% if current_user %>
     <ul class="menu">
       <li><%= link_to "Log Out", logout_path if current_user %></li>
-      <li><%= link_to_unless_current "Problems", problems_path do "<span class='active'>Problems</span>".html_safe end %></li>
-      <li><%= link_to_unless_current "Create User", new_account_path do "<span class='active'>Create User</span>".html_safe end %></li>
-      <li><%= link_to_unless_current "All Users", users_path do "<span class='active'>Problems</span>".html_safe end%></li>
-      <li><%= link_to_unless_current "Tasks", projects_path do "<span class ='active'>Tasks</span>".html_safe end %></li>
+      <%= listitem "Problems", problems_path %>
+      <%= listitem "Create User", new_account_path %>
+      <%= listitem "All Users", users_path %>
+      <%= listitem "Tasks", projects_path%>
+      <%= listitem "Timesheets", timesheets_path %>
     </ul>
   <% end %>
 	<p id="layoutdims"><% if current_user %> Hello <%= current_user.login %> <% end %> </p>
