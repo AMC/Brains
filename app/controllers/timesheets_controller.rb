@@ -96,11 +96,45 @@ class TimesheetsController < ApplicationController
       @projects = Project.unfinished.map{|x|
        [x.title, x.id]
       }
-      @timesheet = current_user.timesheets.where(:end_time=>nil).first
+      @users = User.all.map{|x| [x.login,x.id] unless x.id==current_user.id}.compact
     else
       flash[:error] = "You do not have a current timesheet"
       redirect_to timesheets_path
     end
   end
 
+  def stop_handler
+    unless current_user.has_open_timesheet?
+      flash[:error] = "You do not have a current timesheet"
+      redirect_to root_url 
+    else
+      @timesheet = current_user.open_timesheet
+      if params[:tasks]
+        @timesheet.task_ids = params[:tasks]
+        if @timesheet.end!
+          flash[:notice] = "Successfully save your timesheet."
+          if params[:pairing]
+            @timesheet2 = @timesheet.clone
+            @timesheet2.tasks = @timesheet.tasks
+            @timesheet2.user_id = params[:partner_id]
+            if @timesheet2.save
+              flash[:notice] += "<br /> Create a timesheet for #{@timesheet2.user.login}"
+              
+            else
+              flash[:error] += "Unable to make timesheet for your partner"
+            end
+          end
+          redirect_to root_url
+        end
+      else
+        @projects = Project.unfinished.map{|x|
+         [x.title, x.id]
+        }
+        @users = User.all.map{|x| [x.login,x.id] unless x.id==current_user.id}.compact
+        flash[:error] = "Must specify tasks worked on."
+        render :action=>"stop"
+      end
+    end
+  end
+  
 end

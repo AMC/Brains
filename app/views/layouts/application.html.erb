@@ -30,6 +30,9 @@
 <div class="colmask rightmenu">
 	<div class="colleft">
 		<div class="col1">
+		  <% flash.each do |key, msg| %>
+        <%= content_tag :div, msg.html_safe, :id => key %>
+      <% end %>
 			<%= yield %>
 		</div>
 		<div class="col2">

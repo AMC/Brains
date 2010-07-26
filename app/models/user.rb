@@ -16,5 +16,10 @@ class User < ActiveRecord::Base
   def has_open_timesheet?
     !timesheets.where(:end_time=> nil).empty?
   end
+  
+  def open_timesheet
+    return nil unless has_open_timesheet?
+    timesheets.where(:end_time=>nil).first
+  end
 
 end

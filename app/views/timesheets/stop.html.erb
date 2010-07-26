@@ -1,8 +1,9 @@
 <h1>Ending Timesheet</h1>
 <% form_tag :action=>:stop_handler, :method=>"post" do |f| %>
  <%= select_tag :project, options_for_select(@projects) %>   
- <%=label_tag :tasks, "Tasks that you worked on"%><br /><%= text_field_tag :tasks%>
- <p> <%= check_box_tag :pairing%>Create Timesheet for Pair</p>
+ Tasks:
+ <div id="tasks"></div>
+ <p> <%= check_box_tag :pairing%>Create Timesheet for <%= select_tag :partner_id, options_for_select(@users) %></p>
 <%= submit_tag "End Time"%>
 <% end %>
 <% content_for :head do%>

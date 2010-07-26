@@ -1,7 +1,1 @@
-$("#tasks").html("<table>
-    <%= for task in @tasks %>
-        <tr>
-            <td><%= check_box_tag "task[]", 
-    <% end %>
-    </table>"
-)
+$("#tasks").html("<%= escape_javascript(render(:partial=>"taskchecks"))%>")

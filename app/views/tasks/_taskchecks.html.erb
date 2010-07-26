@@ -1,0 +1,8 @@
+<table>
+<% for task in @tasks do %>
+  <tr>
+    <td><%= check_box_tag( "tasks[]",task.id) %></td>
+    <td><%= task.name %></td>
+  </tr>
+<% end %>
+</table>
